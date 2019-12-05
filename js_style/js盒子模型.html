@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js盒子模型</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+		#box{ height: 200px; width: 200px; border: 10px solid red; margin: 20px; padding: 30px; }
+	}
+	</style>
+</head>
+<body>
+<div id="box">
+	如果想得到就必须付出，还需要学会坚持，如果真的觉得很难，那就放弃，但是放弃以后，不应该抱怨。我觉得人生真就是这样，世界是平衡的，每个人都是通过自己的努力，去决定自己生活的样子。
+</div>
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+var box = document.getElementById('box')
+//JS盒子模型是指通过JS属性和方法获取页面中的样式信息值，所有像素值都是整数，四舍五入
+
+//增加样式，与className区别，不会删除掉原有的class
+// box.classList.add("属性名")
+
+//1.client系列
+// clientHeight/clientWidth盒子边框内的尺寸（不算边框）
+//	clientLeft/clientTop ,盒子边框的宽度
+
+//盒子里的内容可编辑
+// box.contentEditable = true;
+
+//1.offset系列
+// offsetWidth/offsetHeight，是client加上边框的
+//offsetLeft/offsetTop ,当前元素外边框相对于父级元素的位置
+
+//outHTML,把元素本身也包含在内了
+
+//1.scroll系列
+//scrollWidth/scrollHeight:容器内容没溢出是，与client系列一样
+//如果有内容溢出，结果是一个不确定的值，不同浏览器不同
+
+// scrollLeft/scrollTop 滚动条将页面滚去的距离
+
+//对于操作浏览器本身的盒子模型信息，不管设置还是获取，想兼容的话写两套
+document.documentElement(attr)||document.body(attr);
+</script>
+	
+</body>
+</script>

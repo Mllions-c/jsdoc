@@ -1,0 +1,12 @@
+body{ padding:0; margin:0}
+
+.ig {  position:absolute;left:0; top:0; }
+
+.btn{ position:absolute; height:70px; width:46px; background:rgba(0,0,0,0,3); color:#FFF; text-align:center; line-height:70px; font-size:40px; top:115px; cursor:pointer;}
+ .btn2{ left:978px; }
+/*ul{
+	list-style-type:none}*/
+#tabs{ top:300px; left:200px;
+	position:absolute; }
+.tab{ width:20px; height:20px; background:#F06; float:left;  line-height:20px; color:#FFF; margin-left:10px; text-align:center; cursor:pointer}
+.bg{ background:#099;}

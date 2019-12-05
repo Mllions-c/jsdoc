@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>获取最大最小值</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+var arys = [12,2,5,88,4,64,23,54];
+
+// var max = eval(arys.toString());//因为eval的里面是括号表达式，所以eval只执行了最后一个
+// console.log(max);//54
+// 括号表达式特性一：括号表达式，只输出最后一个值，
+// function fn1(){console.log(1);}
+// function fn2(){console.log(2);}
+// (fn1,fn2)();//2
+// 括号表达式特性二：括号里有多项时,this改变
+// var obj = {name:millions,fn:fn2}
+//虽然执行的是obj.fn，也就是fn2，但是this不是obj，而是window，相当于把fn2单独拿出来了
+// (fn2,obj.fn)()
+
+//最优方法,apply特性法
+var max = Math.max.apply(null,arys);//因为在这里this变成谁都无所谓，所以写null，变成window 
+var min = Math.min.apply(null,arys);
+// 字符串拼接法
+// var max = eval('Math.max('+arys.toString()+')');
+// var min = eval('Math.min('+arys.toString()+')');
+// console.log(max);
+// console.log(min);
+
+// 假设法,最常用的编程思想
+// var min = arys[0];
+// var max = arys[0];
+// 	for(i=1; i<arys.length; i++){
+// 		arys[i] > max?max = arys[i]:null;
+// 		arys[i] < min?min = arys[i]:null;  
+// 	}
+	
+
+// console.log(min,max);
+
+// 顺序法
+// arys.sort(function(a,b){
+// 	return a-b;
+// })
+// var min = arys[0];
+// var max = arys[arys.length-1]
+// console.log(min,max)
+
+// 原生方法，不可以，因为不能直接传数组
+// console.log(Math.min(12,2,5,88,4,64,23,54));
+</script>
+</html>

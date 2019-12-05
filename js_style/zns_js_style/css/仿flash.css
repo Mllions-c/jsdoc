@@ -1,0 +1,8 @@
+*{ margin:0; padding:0; list-style:none;}
+body{ background:#CCC; }
+#content{ ; background:#999;  left:0; top:0; right:0; bottom:0; position:absolute; margin:auto; height:270px; width:310px;}
+#big{ position:absolute; left:0; top:0;  }
+#big .bigpic li{ position:absolute; left:0; top:0;  }
+
+#small{ height:76px; width:310px; background:#0F9; top:194px; position:relative;}
+#small .smallpic li{float:left; }

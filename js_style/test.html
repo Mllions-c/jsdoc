@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+window.onload=function(){
+	var ary = ['第一次弹出','第二次弹出','第三次弹出']
+	for(var i = 0; i<ary.length; i++) {
+		setInterval(function(){
+			for(var j = 0; j<ary.length; j++){alert(ary[i]);}
+		},1000*i)
+		
+	}
+	}
+</script>
+</html>

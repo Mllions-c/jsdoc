@@ -1,0 +1,19 @@
+<script type="text/javascript">
+// var ary=[12, 33, 44];
+//ary这个实例通过原型链查找机制找到Array.prototype上的slice方法
+ary.slice
+
+// 找到slice让方法执行，在执行的过程中，才把ary数组截取
+arr.slice()
+
+
+var obj = {name:"测试文字"};
+function fn(){
+	console.log(this)
+}
+// fn.call(obj);
+//call方法作用
+/*1.首先fn的this变为obj，然后把fn函数执行。
+改变this的对应关系。*/
+
+</script>

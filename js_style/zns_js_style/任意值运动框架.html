@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:100px; margin:20px; float:left; background:red; filter:alpha(opacity:30); opacity:0.3; font-size:14px;
+border:1px solid #000; }
+</style>
+<script>
+
+
+
+//四舍五入alert(Math.round(3.00003))
+window.onload=function()
+{
+	var oDiv1=document.getElementById('div1')
+     oDiv1.onmouseover=function()
+		{
+			startMove(this,'opacity',100)
+			}
+		oDiv1.onmouseout=function()
+		{
+			startMove(this,'opacity',30)
+			}
+}
+function getStyle(obj,name)
+{
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle[name]
+		}
+	else
+	{
+		return getComputedStyle(obj,false)[name]
+		}
+	}	
+	function startMove(obj, attr,iTarget)
+{
+	
+	clearInterval(obj.timer)
+	obj.timer=setInterval(function()		
+	{
+		var cut=0
+		if(attr=='opacity') //对属性有方法判断，区分opacity和其他属性
+		{
+		   cut=Math.round(parseFloat(getStyle(obj, attr))*100);//四舍五入
+		}
+		else
+		{
+		    cut=parseInt(getStyle(obj, attr));
+		}
+		var speed=(iTarget-cut)/6;
+		speed=speed>0?Math.ceil(speed):Math.floor(speed)
+		if(cut==iTarget)
+		{
+			clearInterval(obj.timer)
+			}
+		else{
+			       if(attr=='opacity')//对属性有方法判断，区分opacity和其他属性
+				   {
+					    obj.style.filter='alpha(opacity:'+(cut+speed)+')';
+						obj.style.opacity=(cut+speed)/100 ;
+						document.getElementById('txt1').value=obj.style.opacity;
+						
+					}
+				else
+				 {
+					 obj.style[attr]=cut+speed+'px'
+				 }
+			}
+		},30)
+	}
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+<input type="text" id="txt1" />
+
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="../../../js/get cookie.js"></script><script src="../../../js/removeCookie.js"></script>
+<script>
+
+//1)——Cookie用法
+var oDate=new Date();
+oDate.setDate(oDate.getDate()+14);//定义过期时间
+document.cookie='password=123456'//设置Cookie
+document.cookie='user=blue;expires='+oDate//设置过期时间
+//alert(document.cookie)//弹出所有Cookie
+//2)——使用自定义函数设置或获或删除取Cookie
+setCookie('password','123456',15);
+//setCookie('password','123456',-1);//设置日期为负，可删除Cookie,中间值任意
+//alert(getCookie('password'));
+//removeCookie('useName')//有setCookie才能用
+
+</script>
+</head>
+<body>
+</body>
+</html>

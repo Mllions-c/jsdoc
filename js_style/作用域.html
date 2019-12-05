@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>作用域</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+//当浏览器加载html页面的时候，首先会提供一个全局js代码执行的环境->全局作用域(global/window)
+
+//预解释(变量提声)：浏览器天生自带，代码执行前，会把所有带var和function的进行提前声明或定义(赋值)
+//预解释只发生在当前作用域下
+// var 只声明
+// function 声明加定义，定义的值在新开辟的内存空间里以字符串的形式存储
+
+// 堆内存存储的是引用数据类型的值，属性名，属性值，字符串
+// 栈内存，提供代码执行环境，作用域（全局，私有）
+
+//全局状态下声明名的变量是全局变量
+
+//页面关闭时会销毁全局作用域，私有作用域中的代码执行完成，私有作用域会主动销毁（前提是没有被占用）
+
+// 在私有作用域中给DOM的时间绑定方法，一般情况下这个私有作用域不销毁；
+var oDiv = document.getElementById('div1');
+~function () {
+	oDiv.onclick = function () {
+
+	}
+}();
+
+//只要return 的不是基本数据类型，而是引用数据类型，fn就不会销毁，因为外面的f会占用return开辟的堆内存，而如果是基本数据类型，那f就等于100，跟fn没关系了
+function fn() {
+	var num = 2;
+	return function() {
+
+	}
+}
+var f = fn();//有变量接收，不销毁
+fn();//没有接收，销毁了
+fn()();//需要在执行一次，所以不立即销毁，执行完了，浏览器在空闲时会销毁
+
+//通过dom方法获取的元素/集合都是对象数据类型的值
+
+// 函数执行时，1）先形成私有作用域，2）形参赋值，3）私有作用域预解释，4）执行代码
+//只有函数执行才会产生私有作用域，for,while,if,都不是	
+
+// 形参也是属于私有作用域
+
+//函数形成私有作用域，保护里面的私有作用域不受干扰，闭包
+
+//查找上级作用域：看当前函数是在哪个作用域下定义的，那么它的上级作用域就是谁，和函数在哪执行的没关系
+
+//var num = 12//相当于给全局作用域增加了一个全局变量num，也相当于给window增加了一个叫num2的属性名，值为12,。
+
+//num2= 12//相当于给window增加了一个叫num2的属性名，值为12,。
+
+//预解释问题
+// console.log(a)//undifined
+// console.log(b)//报错Uncaught ReferenceError: b is not defined
+// var a = 12;
+// b = 12;
+
+// function fn (){
+// 	console.log(total);//报错，因为当私有作用域中没有total变量时，他回去上级作用于查找，知道找到window，如果还没有，就会报错。
+// 	total = 100;//相当于给window加了属性
+// }
+// fn();
+// console.log(total);//100
+
+// "num" in obj //判断num是否为obj的属性
+
+//自从学了预解释，从此节操是路人
+//1.不管if 是否成立，都进行预解释
+// if (!("num" in window)){//false,因为预解释了，num是window的属性了
+// 	var num = 12;//if里不是私有作用域，所以，var是全局变量
+// }
+// console.log(num);//undefined
+
+// fn();//ok,因为函数预解释时已经声明加定义了
+// function fn(){
+// 	console.log("ok");
+// };
+// fn();//ok
+
+//匿名函数之函数表达式，将函数当成一个值赋给变量或元素的某一个事件
+//推荐用函数表达式定义变量，因为这样出错时，只需要向上找就行
+// fn();//报错，相当于undifined(),因为函数表达式var的形式创建函数，只声明，不定义
+// var fn = function (){
+// 	console.log("ok");
+// }
+
+//自执行函数：不进行预解释，执行到这里时，定义和执行一起完成了
+// (function(num){}) (100);
+// ~function(num){} (100);
+// +function(num){} (100);
+// -function(num){} (100);
+// !function(num){} (100);
+
+//函数体中return下面的代码虽然不执行了，但是预解释
+// function fn() {
+// 	console.log(num);//undefined
+// 	return function () { //return 后面的东西不预解释
+
+// 	};
+// 	var num = 100;
+// };
+
+//变量名和函数名一样，也算冲突，会被后面的覆盖，但是此时后面的fn就不重复声明了
+// var fn = 13;
+// function fn() {
+// 	console.log("ok");
+// }
+
+// fn();//2
+// function fn() {console.log(1)};
+// fn();//2
+// var fn = 10;
+// fn();//TypeError: fn is not a function
+// function fn() {console.log(2)};
+// fn();//上面报错了就不执行了
+
+function fn() {
+	console.log("努力到无能为力");//"努力到无能为力"
+};
+console.log(fn)//当前函数本身
+console.log(fn())//因为函数里没有return，所以是undefined
+
+</script>
+</html>

@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+
+//alert(document.doctype.nodeName+document.doctype.nodeValue)//文档节点名和属性
+//——childNodes获取子节点，
+/*window.onload=function()
+{
+	var oUl=document.getElementById('ul1')
+   //	alert(oUl.childNodes.length)IE6-8
+      //弹出节点的name和值
+   //alert(oUl.childNodes[0].nodeName+'/'+oUl.childNodes[0].nodeValue)
+  // 控制台打出节点的name和值
+   //console.log(oUl.childNodes[0].nodeName+'/'+oUl.childNodes[0].nodeValue)
+    
+ 
+
+    for(var i=0; i<oUl.childNodes.length;i++)
+	{
+        //获取节点类型nodeType
+		//alert(oUl.childNodes[0].nodeType)//nodeType==1元素节点;nodeType==3文本节点
+		 
+		if(oUl.childNodes[i].nodeType==1)   //筛选出元素节点,兼容所有
+		
+		{
+			oUl.childNodes[i].style.background='red'
+			}
+		}
+	}*/
+/*
+——children方法 简单很多，不用删选，他自动忽略文本节点，只选出元素节点。
+	 for(var i=0; i<oUl.children.length;i++) //子节点只算第一层
+	{
+     oUl.children[i].style.background='red'
+			}
+		}
+——parentNode(父节点)offsetParent(有定位的父节点)
+window.onload=function()  //点击，隐藏
+{
+	var oUl=document.getElementById('ul1');
+	var aA=document.getElementsByTagName('a')
+	for(var i=0; i<aA.length; i++)
+	{
+		aA[i].onclick=function()
+		{
+			this.parentNode.style.display='none';
+			
+			}}}
+<ul id="ul1">
+<li>asdgasg<a href="#">隐藏<a></li>
+<li>khjljlhujl<a href="#">隐藏<a></li>
+<li>xcvxc<a href="#">隐藏<a></li>
+<li>ouipui<a href="#">隐藏<a></li>
+</ul>
+——firstElementChild(高级版本兼容)/firstChild(IE5678)
+window.onload=function()
+{
+	var oUl=document.getElementById('ul1');
+	
+	if(oUl.firstElementChild)   //利用if判断真假（空为假）语句来兼容
+	{
+		oUl.firstElementChild.style.background='red'
+		}
+	else
+	{
+		oUl.firstChild.style.background='red'
+		}
+}*/
+//——setAttribute，设置属性值
+/*oBtn.onclick=function()
+{
+	oTxt.value='sfagag';// 对比1
+	oTxt[value]='sfagag';//对比2
+	alert(oTxt.attributes[0])
+	oTxt.setAttribute('value','sfagag') //(属性名，值)不常用
+	 oTxt.setAttribute('color','red')//为什么不好使
+	}
+*/
+
+
+/*——删除子元素 removeChild
+window.onload=function()
+{
+	var aA=document.getElementsByTagName('a')	
+	var oUl=document.getElementById('ul1')
+	for(var i=0; i<aA.length;i++)
+	{
+		aA[i].onclick=function()
+		{
+			oUl.removeChild(this.parentNode)
+			}
+	}
+	
+	}*/
+//——判断节点关系contents方法
+//alert(pNode.contains(cNpde));//布尔值，用在非元素节点IE不兼容
+//2)兼容版 a父，b子
+/*function fixContains(a,b){
+     try{
+	           while((b=b.parentNode)){   //为什么双层括号
+				     if(b===a){
+					      return true;
+					 }
+				}
+				return false;
+		   }  
+		   catch(e){
+		      return false;
+		   }
+}*/
+/*——文档碎片（在低版本浏览器里能稍微提升一定性能，高版反而会降低。）
+window.onload=function()
+{
+	
+	var oUl=document.getElementById('ul1')
+	var oFrag=document.createDocumentFragment();//创建文档碎片
+	for(var i=0; i<10000;i++)
+	{
+		var oLi=document.createElement('li');
+		oFrag.appendChild(oLi);  //将每次创建的li打包到oFrag里
+		}
+		oUl.appendChild(oFrag);//将oFrag放到父元素中
+	}*/
+
+/*——获取元素的连起来写法
+ window.onload=function()
+ {
+	 alert(document.getElementById('tab1').getElementsByTagName('tbody')[0].
+	 getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML);
+	 //简便写法，只有表格有
+	  alert(document.getElementById('tab1').tBodies[0].rows[1].cells[1].innerHTML);/
+	 }*/
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>1</title>
+<style>
+
+</style>
+<script>
+window.onload=function()  //执行同样事件不冲突方法，并兼容处理
+{
+	var oBtn=document.getElementById('btn1')
+	/*if(oBtn.attachEvent)//IE  IE9以下顺序相反，先b后a
+	{
+			oBtn.attachEvent('onclick',function()
+		   { 
+			alert('a')
+			})
+	  oBtn.attachEvent('onclick',function()
+  {
+	  alert('b')
+	  })		
+} 
+else{   // 非IE
+	oBtn.addEventListener('click',function() 
+	{alert('a')}
+	,false)
+		oBtn.addEventListener('click',function()
+	{alert('b')}
+		,false)
+	}*/
+}
+
+</script>
+</head>
+
+<body>
+<input id="btn1" value="按钮"  type="button"/>
+</body>
+</html>

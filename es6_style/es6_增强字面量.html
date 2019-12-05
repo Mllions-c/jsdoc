@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>react3</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript" src="browser.min.js"></script>
+<script type="text/babel">
+{/*let a = 1;
+let b = 2;
+let obj = {
+	a,
+	b
+};
+console.log(obj.a)//1*/}
+
+{/*通过对象字面量创建对象*/}
+var human = {
+	breathe(){
+		console.log('breathing...');
+	}
+};
+var worker = {
+	__proto__:'human',/*设置此对象的原型为human,相当于继承human*/
+	work(){
+		console.log('working');
+	}
+};
+human.breathe();{/*breathing...*/}
+worker.breathe();{/*breathing...*/}
+
+</script>
+
+</html>

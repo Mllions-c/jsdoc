@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>replace</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+//replace:把原有的字符替换成新的字符
+//缺点，每次只能替换一个，二次匹配也重最开始位置匹配
+// var str = "zhufeng2015zhufeng2016";
+// str = str.replace("zhufeng","zhufengpeixun");
+// console.log(str);//zhufengpeixun2015zhufeng2016
+
+//所以replace第一个参数要放正则:原理，先匹配和补获到再替换
+// var str = "zhufeng2015zhufeng2016";
+// str = str.replace(/zhufeng/g,"zhufengpeixun");
+// console.log(str);//zhufengpeixun2015zhufengpeixun2016
+
+//参数是函数，捕获几次，函数就执行几次,arguments和用exec补获内容一样,就是大正则和分组内容，但是没有属性名,用0,1,2代表。
+//没有分组时
+//arguments[0]content,大正则内容
+//arguments[1]index,大正则内容索引
+//arguments[2]input,原始字符串
+//在有分组时
+//arguments[0]content,大正则内容
+//arguments[1]index,第一个分组的内容，如果有多个分组，那就从后面开始排
+//arguments[2]input,索引，有分组时，索引也只有一个，大正则索引
+//arguments[3]input,原始字符串
+
+
+//return，你返回的结果是什么，就把大正则内容替换成它
+
+// var str = "zhufeng2015zhufeng2016";
+// str = str.replace(/zhufeng/g,function(){
+// 	console.log(arguments);//和用exec补获内容一样，数组，但是没有input等属性名
+// 	//console.log(RegExp,$1);//获取第一分组内容
+// 	return "zhufengpeixun"
+// })
+// console.log(str);//zhufengpeixun2015zhufengpeixun2016
+
+//练习
+// var str = "20151213";
+// var ary = ["零","壹","贰","叁","肆","伍","陆","柒"];
+// str = str.replace(/\d/g,function(){
+// 	return ary[arguments[0]]
+// })
+// console.log(str);
+</script>
+	
+	<script type="text/javascript" src="../../js/utils.js"></script>
+	<script type="text/javascript" src="../../js/demo_js/tab.js"></script>
+</body>
+</script>

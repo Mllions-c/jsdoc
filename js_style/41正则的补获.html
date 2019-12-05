@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则的补获</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+//exec ->正则的补获
+// 1)捕获到的内容是一个数组
+// 2)第一项是当前捕获的内容
+// 3)index:捕获内容在字符串中开始的位置
+// 4)input:捕获的原始字符串
+// 5)捕获不成功时输出null;
+
+// //正则捕获的懒惰性
+// 1)只要匹配到了，就不会匹配下一个；
+// 2)reg.lastIndex 开始捕获的位置，默认为零
+
+// //解决懒惰性
+// 1)使用修饰符：g(全局匹配)
+// 			  i(忽略大小写匹配)
+// 			  m(多行匹配)
+//加了g之后，下一次捕获会在新的位置查找，原理改变lastIndex的值
+
+// var reg = /\d+/;
+// var str = "zhufeng2015peixun2016"
+// console.log(reg.exec(str));
+// 捕获的最后一次为null；
+
+//捕获全部
+// var reg = /\d+/;
+// var str = "zhufeng2015peixun2016"
+// var ary = [];
+// res = reg.exec(str);
+// while(res){
+// 	ary.push(res[0]);
+// 	res = reg.exec(str);
+// }
+// console.log(ary)
+
+//捕获的贪婪性
+//每一次捕获都是按照匹配最长的结果
+//解决：在量词后面加?
+// var reg = /\d+?/g;//["2"...]
+
+
+//正则补获第二种方式：match，也有贪婪懒惰性
+//字符串中的match方法->可以把所有和正则匹配的字符串都找到
+str.match(reg)//省去了while循环
+
+//虽然match在当前情况下简单好用，但是有自己的局限性，不能捕获分组
+//在分组补获的情况下，match只能补获大正则的内容，小正则是无法捕获的；
+</script>
+	
+	<script type="text/javascript" src="../../js/utils.js"></script>
+	<script type="text/javascript" src="../../js/demo_js/tab.js"></script>
+</body>
+</script>

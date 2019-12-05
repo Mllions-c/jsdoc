@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数据类型检测</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+r()
+
+
+
+</head>
+<body>
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+// instanceof的弊端
+// 1.instanceof不能用来处理字面量创建的基本类型值，但实例方法可以
+new Number(1) instanceof Number //ture
+// 2.只要在原型链上能找到的，instanceof 都为ture，所以不能在原型链继承中结果不准确
+
+//constructor检查数据类型,不但可以检查引用数据类型，也可以处理基本数据类型，而且不会找原型链上。
+// var obj = [];
+// console.log(obj.constructor === Array);//true;
+// var num = 1;
+// console.log(obj.constructor === Number);//true;
+//constructor局限性
+//对于重写的原型，constructor可以自定义，这样检测出来的结果不准确
+
+// 对于特殊的数据类型null和undefined，他们所属类是Null和Undefined,但是浏览器把这两个类保护起来了，不允许我们在外面访问使用；
+
+// 4.Object.prototype.toString.call()最准确最常用，可以检测包括特殊数据类型的所有数据类型
+//首先获取Object原型上的toString方法，让其执行，并改变方法中的this关键字指向
+//除了null undefined,所有数据类型都有 toString()方法,或在私有，或在原型
+// Number中的toString：转换为字符串
+//(12).toString()//后面括号里可以有参数，表示进制，默认为十进制
+
+Math、Object的toString不是转为字符串
+Object.toString() 返回当前方法主体(this)所属类的详细信息；[Object Object],
+第一个Object代表当前实例数据类型（固定死的），第二个Object代表所属类
+Object.prototype.toString.call()，参数为检查的对象
+var ary = [];
+//用法1.Object.prototype.toString.call(ary) === "[object Array]";
+var reg = /^\[object Array\]$/;
+//用法2.reg.test(Object.prototype.toString.call(ary));//true
+
+</script>
+	
+
+</body>
+</script>

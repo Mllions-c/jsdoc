@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 1.为删除添加onclick
+1.1确认删除xx对话框,xx为当前a的td的tr的第一个td的文本。去除前后空格
+1.2若点击确认，则删除a节点所在的行 */
+window.onload=function(){
+	var aNodes=document.getElementById("employeetable")
+	                   .getElementsByTagName("a");
+
+	for(var i=0;i<aNodes.length; i++){
+		aNodes[i].onclick=function(){	
+		    var trNode=this.parentNode.parentNode;
+			
+		    var textContent=trNode.getElementsByTagName("td")[0]
+		                          .firstChild.nodeValue;
+		    alert(textContent)
+			trNode.removeChild()
+		    return false;
+		}
+	}//for-end
+}
+</script>
+</head>
+<body>
+    <center>
+    <br><br><h1>添加新员工</h1><br><br>
+    Name:<input type="text" name="name" id="name">&nbsp;&nbsp;
+    Email:<input type="text" name="name" id="name">&nbsp;&nbsp;
+    Salary:<input type="text" name="name" id="name">&nbsp;&nbsp;<br><br>
+    <button id="addEmpButton">Submit</button>
+    <br><br>
+	<hr>
+	<br><br>
+	<table id="employeetable" border="1" cellpadding="10" cellspacing="1">
+	    <caption>员工信息表</caption>
+		<tbody>
+		<tr>
+		<th>Name</th>
+		<th>Email</th>
+		<th>Salary</th>
+		<th>&nbsp;</th>
+		</tr>
+		<tr>
+		<td>Tom</td>
+		<td>tom@qq.com</td>
+		<td>5000</td>
+		<td><a href="../../../未命名站点 2/deleteEmp?id=001">Delete</a></td>
+		</tr>
+		<tr>
+		<td>Jerry</td>
+		<td>Jerry@qq.com</td>
+		<td>8000</td>
+		<td><a href="../../../未命名站点 2/deleteEmp?id=002">Delete</a></td>
+		</tr>
+		<tr>
+		<td>Bob</td>
+		<td>bob@qq.com</td>
+		<td>7000</td>
+		<td><a href="../../../未命名站点 2/deleteEmp?id=003">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</center>
+</body>
+</html>

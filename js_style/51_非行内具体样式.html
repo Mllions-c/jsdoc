@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>非行内具体样式获取</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+		#box{ height: 200px; width: 200px; border: 10px solid red; margin: 20px; padding: 30px; opacity: 0.1}
+	}
+	</style>
+</head>
+<body>
+<div id="box">
+	如果想得到就必须付出，还需要学会坚持，如果真的觉得很难，那就放弃，但是放弃以后，不应该抱怨。我觉得人生真就是这样，世界是平衡的，每个人都是通过自己的努力，去决定自己生活的样子。
+</div>
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+//获取所有经过浏览器计算的非行间样式
+/*——获取非行间样式
+	var oDiv=document.getElementById('div1');
+	//alert(oDiv.currentStyle.width);  //不能写在外面，.currentStyle：Chrome 、FF不兼容
+	//alert(getComputedStyle(oDiv,'任意值').width);  IE678不兼容
+
+//处理兼容性问题	
+	if(oDiv.currentStyle)  //用if的判断真假功能来做兼容处理，if能解决90%的兼容性问题
+	{
+		alert(oDiv.currentStyle.width);
+		}
+	 else
+	 {
+		 alert(getComputedStyle(oDiv,false).width);
+		 }
+
+
+
+*/	
+	//复合样式例如background，需写成backgroundcolor;
+	var oDiv=document.getElementById('box');
+	
+	console.log(utils.getStyle(oDiv,'opacity'))
+	// console.log(oDiv.currentStyle["filter"])
+//对于部分没有写的样式属性，对于标准浏览器和IE浏览器的显示结果也不一样，
+//所以在写JS样式时，避免写复合样式，要写具体的,例如marginTop
+//所以写CSS时，要初始化样式，弥补不同浏览器的不同
+
+
+//通过检测浏览器来处理兼容
+// var str = window.navigator.userAgent;
+// var reg = /(chrome)/gi
+// var reg = /(msie)/gi
+// var reg = /(firefox)/gi
+// console.log(reg.test(str));
+
+//封装好的检测浏览器
+// console.log(utils.getUserAgent())
+</script>
+	
+</body>
+</script>

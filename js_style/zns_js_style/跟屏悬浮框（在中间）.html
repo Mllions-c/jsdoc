@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{ width:100px; height:150px; background:red; position:absolute; right:0; bottom:}
+</style>
+<script>
+window.onscroll=function()
+{
+	    var oDiv=document.getElementById('div1')
+		var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;//兼容性处理
+		//oDiv.style.top=(document.documentElement.clientHeight-oDiv.offsetHeight)/2+scrollTop+'px';
+		startMove(parseInt((document.documentElement.clientHeight-oDiv.offsetHeight)/2+scrollTop)
+	)}//悬浮框在中间的算法：可是区域减去悬浮框高度/2,取整防止除2后有小数造成波动
+var timer=null
+function startMove(iTarget)//做悬浮框缓冲
+{
+	var oDiv=document.getElementById('div1')
+	clearInterval(timer);
+	timer=setInterval(function()
+	{
+		var speed=(iTarget-oDiv.offsetTop)/4
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		oDiv.offsetTop=oDiv.offsetTop==iTarget?clearInterval(timer):
+		oDiv.style.top=oDiv.offsetTop+speed+'px'//三目运算简化
+		//document.getElementById('txt1').value=oDiv.offsetTop;非内容，观测看数值
+		//document.title=iTarget;非内容，观测看数值
+		/*if(oDiv.offsetTop==iTarget)
+		{
+			clearInterval(timer);
+			}
+		else
+		{
+		     oDiv.style.top=oDiv.offsetTop+speed+'px' 	
+			}*/
+		},30)
+	}
+
+</script>
+</head>
+<!--<input type="text" id="txt1" style="position:fixed"; right:0; top:0;>非内容，观测数值-->
+<body style="height:2000px;">
+<div id="div1">
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*function show()//show.call可以改变函数里的this
+{
+   alert(this)	
+}
+show.call(12)//12
+show()//window
+*/
+//————
+/*function show(a,b)
+{
+   alert('this是:'+this+'\na是:'+a+'\nb是:'+b)	;
+}
+
+//show(12,5)//this是object window a是12 b是5
+show.call(12,1,5)*/
+//——继承父级属性
+function A()
+{
+   this.abc=12;	
+}
+A.prototype.show=function()
+{
+    alert(this.abc);
+}
+function B()
+{
+   A.call(this)//继承父级属性
+}
+//B.prototype=A.prototype//继承父级方法（问题相互引用，占用同一空间，所以给B添加方法时，也会给A）
+for(var i in A.prototype)   //解决方法，此方法相当于新创建了一个内存空间，不相互引用
+{
+     B.prototype[i]=A.prototype[i]	
+}
+var obj=new B()
+obj.show()
+B.prototype.fn=function() //所以给B添加方法时，也会给A
+{
+   alert('abc')	
+}
+var objA=new A()
+objA.fn();// abc（问题相互引用，占用同一空间，所以给B添加方法时，也会给A
+</script>
+</head>
+
+<body>
+</body>
+</html>

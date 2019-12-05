@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+
+//强大的字符串匹配工具,建立输入文本的规则
+//1)新建正则的方式：实例法，里面放字符串
+//var re=new RegExp("")
+//2)新建正则的方式2：per风格
+//var re=/a/
+//两种创建方式的区别
+//字面量方式中，//之前包起来的所有内容都是元字符，有的具有特殊意义，大部分都是代表自身的元字符，所以不能在这种正则里加变量
+//实例创建里面可以加变量,里面的\d需要转义，因为里面所有内容都是字符串，修饰符加到第二个参数
+// var reg = new RegExp("^\\d" + name + \\d+"$","g")
+
+
+//3)忽略大小写i
+//var re=/a/i
+//var re=new RegExp('a',  'i');
+//var str='Abcdef';
+//alert(str.search(re))//0
+
+//4)找第一个数字位置
+//var str='asdf 324 23 nnk';
+//var re=/\d/;
+//alert(str.search(re))//5
+
+//5)match把匹配的东西提取出来,g全部
+//var str='efsf 65 7878 2xvx22';
+//var re=/\d/g;//一位数
+//var re=/\d\d/g;//两位数
+//var re=/\d+/g;//若干位
+//alert(str.match(re))
+
+//6)replace替换
+//var str='abc aaa ewag';
+//var re=/\a/g
+//alert(str.replace(re,'0'))
+
+//7)元字符，或[]
+//var str='abc bbc cbc dbc ybc ubc'
+//var re=/[abu]bc/g;
+//alert(str.match(re))//abc bbc ubc
+//[a-z]范围
+//[^a-z] [^a-z0-9]排除
+
+//8)转义字符种类
+// \d 数字 [0-9]
+// \w 英文、数字、下划线 [a-zA-Z0-9]
+// \s 空白字符、空格、制表符（tab键）、换页符
+// \D [^0-9]
+// \W  [^a-z0-9]
+// \S 非空白字符
+// \b 一个边界符
+//. 除了\n以外的任意字符
+// x|y :x或者y中的一个
+// [xyz] :xyz三个中的一个
+// [^xyz] :除了三个以外的任何一个字符
+
+//9) 量词
+//{n}出现n次
+//{n,m}n到m次
+//{n,}n到多次
+//+ {1,}最少1次
+//? {0,1}零次或者1次
+//* {0,}零到多次
+// /[1-9]\d{7}/八位的电话号码
+// /[1-9]\d{4,10}/5到11位的QQ号
+// /^1\d{10}$/到11位的手机号
+//带去区号的固话
+//(0\d{2-3}-)?[1-9]\d{7}
+//验正年龄18~65之间
+// var reg = /^(1[8-9]|[2-5]\d|6[0-5])$/
+//中国标准真实姓名
+//var reg = /^[\u4e00-\u9fa5]{2,4}$/;
+//身份证号码
+//var reg = /^/d{17}(\d|X)$/
+// 正则：它就是处理字符串的规则
+// reg.test(str);//验证，返回布尔
+// reg.exec(str);//补获，返回数组，包含捕获内容，索引
+
+// console.log(RegExp);
+// console.log(RegExp.prototype);
+// console.dir(RegExp.prototype)
+
+//分组->把一个大正则分成几个小正则
+// var reg = /^(\d)+millions(\d+)$/
+//分组作用一：改变 x|y的优先级
+// var reg = /^18|19$/  18、19，181/189....
+// var reg = /^(18|19)$/ 	18或19
+
+// []里面的代表本身，表示可选范围,里面如果是多位数，都是单位数
+//[12]代表1或2
+
+//有效数字的正则
+var reg = /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/;
+
+
+</script>
+	
+	<script type="text/javascript" src="../../js/utils.js"></script>
+	<script type="text/javascript" src="../../js/demo_js/tab.js"></script>
+</body>
+</script>

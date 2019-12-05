@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+body{ margin:0; padding:0;}
+p,h1,h2,h3,h4,h5,h6,form,ul,ol,hr{ margin:0; padding:0;}
+li{ list-style:none;}
+#tab{  width:230px;   margin:0 auto; background:#F0ECE3; padding:8px;	}
+#tab li{ height:56px; width:60px; float:left; margin:8px; background:#000; color:#FFF; text-align:center; padding-top:6px; }
+#tab .active{ background:#FFF; color:#F00;}
+.text{ background:#FAF7E2; width:214px; clear:left; margin:0 auto; font-size:14px;}
+
+
+</style>
+<script>
+window.onload=function()
+{         var arr=['大家去哪玩',    //arr数组
+                         '大家去哪吃饭',
+						 '大家去哪疯',
+						 '大家去哪喝',
+						 '大家去哪旅游',
+						 '大家去哪度假',
+						 '大家去哪睡觉',
+						 '大家去哪工作',
+						 '大家去哪过年',
+						 '大家去哪消费',
+						 '大家去哪发财',
+						 '大家去哪避暑'
+
+]
+
+          var oDiv=document.getElementById('tab');       
+          var aLi=oDiv.getElementsByTagName('li');  //获取一组元素
+		  var oTxt=oDiv.getElementsByTagName('div')[0];
+		  
+		  for(var i=0; i<aLi.length; i++)
+		  {      aLi[i].index=i;   //索引值的使用
+			     aLi[i].onmouseover=function()    //提取行间事件
+			  {
+		          for(var i=0; i<aLi.length; i++)
+		  {
+			        aLi[i].className=" ";
+			  }
+		  this.className="active";     
+		  oTxt.innerHTML='<h2>'+(this.index+1)+'月活动</h2><p>'+arr[this.index]+'</p>'; //字符串相加时，用()是两个先相加
+	
+	     }//innerHTML为标签添加文字，除input
+     }
+	 
+}
+</script>
+</head>
+
+<body>
+<div id="tab" class="calendar">
+     
+     <ul>  
+              <li class="active"><h2>1</h2><p>Jan</p></li>
+              <li><h2>2</h2><p>Fer</p></li>
+              <li><h2>3</h2><p>Mar</p></li>
+              <li><h2>4</h2><p>Apr</p></li>
+              <li><h2>5</h2><p>May</p></li>
+              <li><h2>6</h2><p>Jun</p></li>
+              <li><h2>7</h2><p>Jul</p></li>
+              <li><h2>8</h2><p>Aug</p></li>
+              <li><h2>9</h2><p>Sep</p></li>
+              <li><h2>10</h2><p>Oct</p></li>
+              <li><h2>11</h2><p>Nov</p></li>
+              <li><h2>12</h2><p>Dec</p></li>            
+     <div class="text">
+               <h2>1月活动</h2>
+               <p>快过年了，大家可以商量着去哪玩吧~</p>
+     </div>
+</div>
+
+
+
+</body>
+
+
+
+
+</html>

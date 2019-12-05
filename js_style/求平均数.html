@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>获取最大最小值</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+
+// 
+// //求平均数
+   //参数为数组时
+// var ary1 = [12.2,2.3,5.9,88.2,4.6,64.8,23.2,54.2];
+// 	function avgFn() {
+// 		
+// 		ary1.sort(function(a,b){
+// 			return a - b
+// 		})
+// 		ary1.pop();
+// 		ary1.shift();
+// 		return(eval(ary1.join("+"))/ary1.length).toFixed(2)
+
+// 	}
+// 	var res = avgFn(ary1);
+// 	console.log(res);
+
+//参数不是数组时，先转换为数组
+	// function avgFn() {
+ 	//转换为数组方法1：传统方法
+	// 	 // var ary = []
+	// 	 // for(var i = 0; i<arguments.length; i++) {
+	// 	 // 	ary[ary.length] = arguments[i]
+	// 	 // }
+		//转换为数组方法2：call方法
+	// 	 ary = Array.prototype.slice.call(arguments);//用call方法arguments转化为数组，适用类数组
+		//ary = [].slice.call(arguments);//更简写，因为[]也是数组实例，也能找到数组原型
+	// 	ary.sort(function(a,b){
+	// 		return a - b
+	// 	})
+	// 	ary.pop();
+	// 	ary.shift();
+	// 	return(eval(ary.join("+"))/ary.length).toFixed(2)
+	// }	
+	// var res = avgFn(12.2,2.3,5.9,88.2,4.6,64.8,23.2,54.2);
+	// console.log(res);
+
+    //优化方法2
+	// function avgFn() {
+	// 	//转换为数组方法3		 
+	// 	 arguments.__proto__ = Array.prototype;//通过原型链继承，让arguments可以用数组的方法，适用类数组
+	// 同方法2的区别，方法2只是借用了数组的一个方法
+	// 	arguments.sort(function(a,b){
+	// 		return a - b
+	// 	})
+	// 	arguments.pop();
+	// 	arguments.shift();
+	// 	return(eval(arguments.join("+"))/arguments.length).toFixed(2)
+	// }
+	// var res = avgFn(12.2,2.3,5.9,88.2,4.6,64.8,23.2,54.2);
+	// console.log(res);
+
+	// 优化方法3：直接接用法,只能类数组才能借用
+		function avgFn(){
+		Array.prototype.sort.call(arguments,function(a,b){
+			return a - b
+		});
+		[].pop.call(arguments);
+		[].shift.call(arguments);
+		return(eval([].join.call(arguments,"+"))/arguments.length).toFixed(2)
+	}
+	var res = avgFn(12.2,2.3,5.9,88.2,4.6,64.8,23.2,54.2);
+	console.log(res);
+</script>
+</html>

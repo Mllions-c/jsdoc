@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:100px; margin:20px; float:left; background:red; filter:alpha(opacity:30); opacity:0.3; }
+</style>
+<script>
+//多个物体运动，不能有共用的，例如此案例中alpha,timer不能共用
+window.onload=function()
+{
+	var aDiv=document.getElementsByTagName('div')
+	for(i=0; i<aDiv.length; i++)
+	{
+		aDiv[i].alpha=30//这个不声明就不行
+		aDiv[i].timer=null//为什么不声明也行
+		aDiv[i].onmouseover=function()
+		{
+			startMove(this,100)
+			}
+		aDiv[i].onmouseout=function()
+		{
+			startMove(this,30)
+			}
+		}
+	
+	}
+	//var alpha=30;
+function startMove(obj,iTarget)
+{
+	
+	clearInterval(obj.timer)
+	obj.timer=setInterval(function()
+	{
+		var speed=(iTarget-obj.alpha)/6
+		speed=speed>0?Math.ceil(speed):Math.floor(speed)
+		if(obj.alpha==iTarget)
+		{
+			clearInterval(obj.timer)
+			}
+		else{
+			     obj.alpha+=speed
+				 obj.style.filter='alpha(opacity:'+obj.alpha+')'
+				 obj.style.opacity=obj.alpha/100
+			}
+		},30)
+	}
+</script>
+</head>
+
+<body>
+<div></div>
+
+<div></div>
+<div></div><div></div>
+</body>
+</html>

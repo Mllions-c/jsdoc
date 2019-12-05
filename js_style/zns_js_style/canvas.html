@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<canvas id="canvas" ; width="1024" height="768" style="border:1px solid #aaa; display:block; margin:50px auto">
+当浏览器不支持Canvas,请更换浏览器
+</canvas>
+<script>
+window.onload=function(){
+     var canvas=document.getElementById('canvas')
+	 
+	 canvas.width=1024;
+	 canvas.height=768;
+	 var context=canvas.getContext("2d")
+	 
+	 context.beginPath()
+	 context.moveTo(100,100);
+	 context.lineTo(700,700);
+	 context.lineTo(500,700);
+	 context.lineTo(100,100);
+	 context.closePath()
+	 context.lineWidth=5; //线条宽度
+	 context.strokeStyle="#005588"//定笔触样式义,使用字符串
+	 context.fillStyle="rgb(2,100,30)"//也可用rgb
+	 context.fill()//执行填充
+	 context.stroke()//绘制线条
+	
+	 context.beginPath()
+	 context.moveTo(600,100);
+	 context.lineTo(900,200);
+	 context.lineTo(600,500);
+	 context.lineTo(750,300);
+	 context.closePath()
+	 context.lineWidth=5; //线条宽度
+	 context.strokeStyle="#005588"//定笔触样式义,使用字符串
+	 context.fillStyle="rgb(2,100,30)"//也可用rgb
+	 context.fill()//执行填充
+	 context.stroke()//绘制线条 
+	 
+	   
+}
+</script>
+</body>
+</html>

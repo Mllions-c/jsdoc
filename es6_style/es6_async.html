@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+
+/*浅拷贝数组*/
+/*let obj = {a:'a', b:'b'};
+let arr = [1, 2, 3，obj];
+let arr2 = Array.from(arr);//方法1
+let arr2 = arr.slice(0);//方法2
+arr[0]=111;//更改非引用类型没事
+obj.c='c';//更改引用类型还是会改变arr2
+console.log(arr, arr2);*/
+
+//深拷贝数组
+// 自己写脚本，或者用lodash库
+
+// copywithin，findIndex与find区别，返回下标，方法,省略，不实用
+
+//填充
+/*let arr = [1, 2, 3, 4, 5];
+arr.fill('a', 2, 4);//将a填充从2到4
+console.log(arr);*/
+
+/*找下标,没找到返回-1*/
+/*let arr =[1, 'a', '1', 23];
+let res = arr.indexOf(8);
+console.log(res);*/
+
+/*线性的都有迭代器，数组有，对象没有。*/
+//arr.keys()取下标
+/*let arr =[1, 'a', '1', 23, NaN, Infinity];
+let arrKeys = arr.keys()
+console.log(arrKeys);
+for ( let item of arrKeys){
+  console.log(item);
+}*/
+
+//arr.entries()返回数组内容，成对的
+/*let arr =[1, 'a', '1', 23, NaN, Infinity];
+let arrKeys = arr.entries()
+
+for ( let item of arrKeys){
+  console.log(item);
+}*/
+
+//遍历数组四种方法
+/*for基本
+for in //用于遍历对象
+for of //方法与for in相同，但不会把对象打印出来，用于数组
+forEach
+arr.forEach({item,index, arr}{
+  if (item===3){
+    return;//不能用break
+  }
+  console.log(item)
+}) 
+*/
+
+/*属性名简写*/
+/*let a='1123';
+let b= '1241';
+let c= [1, 3];
+let para='bbb'
+let obj = {
+  a,
+  b,
+  c,
+  add () {
+  return 123//函数简写
+  }.
+  [para]: 456//属性名是变量的写法
+};
+function func () {
+  return {a, b ,c}
+}
+console.log(func())*/
+
+/*跟严格更合理的相等*/
+/*console.log(+0 === -0);//ture
+console.log(Object.is(+0, -0));//false
+
+console.log(NaN === NaN);//false
+console.log(Object.is(NaN, NaN));//ture
+
+console.log({} === {});//false
+console.log(Object.is({}, {}));//false*/
+
+
+
+</script>
+
+
+</html>

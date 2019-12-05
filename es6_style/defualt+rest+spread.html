@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>react3</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript" src="browser.min.js"></script>
+<script type="text/babel">
+Default 默认参数值
+
+function sayHello(name){
+	//传统的指定默认参数的方式
+	var name=name||'dude';
+	console.log('Hello '+name);
+}
+//运用ES6的默认参数
+function sayHello2(name='dude'){
+	console.log(`Hello ${name}`);
+}
+sayHello();//输出：Hello dude
+sayHello('zf');//输出：Hello zf
+sayHello2();//输出：Hello dude
+sayHello2('zf');//输出：Hello zf
+
+Rest 剩余参数
+// rest
+function restFunc(a, ...rest) {
+  console.log(a)
+  console.log(rest)
+}
+restFunc(1);//1 []
+restFunc(1, 2, 3, 4);1 [2,3,4]
+
+Spread 扩展操作符
+var people=['zf','John','Sherlock'];
+
+function sayHello(people1,people2,people3){
+	console.log(`Hello ${people1},${people2},${people3}`);
+}
+//但是我们将一个数组以拓展参数的形式传递，它能很好地映射到每个单独的参数
+sayHello(...people);//输出：Hello zf,John,Sherlock
+
+//而在以前，如果需要传递数组当参数，我们需要使用函数的apply方法
+sayHello.apply(null,people);//输出：Hello zf,John,Sherlock
+</script>
+
+</html>

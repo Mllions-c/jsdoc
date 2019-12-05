@@ -1,0 +1,263 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+
+#parent{ width:600px; height:20px; background:#ccc; position:relative; margin:10px auto;}
+#div1{ width:20px; height:20px; background:red; position:absolute; left:0; top:0;}
+#div3{ width:400px; height:300px; border:1px solid black; overflow:hidden; position:relative;}
+#div4{ position:absolute;left:0;top:0; padding:4px;}
+</style>
+<script>
+window.onload=function()
+{
+   var oDiv=document.getElementById('div1');
+   var oDiv2=document.getElementById('parent');
+    var oDiv3=document.getElementById('div3');
+	var oDiv4=document.getElementById('div4')
+   oDiv.onmousedown=function(ev) //按下时
+   {
+	   var oEvent=ev||event;
+	   disX=oEvent.clientX-oDiv.offsetLeft; //定义鼠标点击位置与文本框坐标的差值
+	   
+	   
+	   document.onmousemove=function(ev)//拖拽时
+	{
+		var oEvent=ev||event;
+		var l=oEvent.clientX-disX;
+		
+		
+		 if(l<0)    //限制从左边出去
+		{
+			l=0;
+			}
+			else if(l>oDiv2.offsetWidth-oDiv.offsetWidth)//限制从右边出去 
+			{
+				l=oDiv2.offsetWidth-oDiv.offsetWidth;
+				}
+				var scale=l/(oDiv2.offsetWidth-oDiv.offsetWidth);  <!--获得滚动条百分比变量，-->
+			  oDiv4.style.top=-(oDiv4.offsetHeight-oDiv3.offsetHeight)*scale+'px'//盒子定位与滚动条关联
+			
+			oDiv.style.left=l+'px';//新文本框的位置就等于鼠标位置加上差值
+		}
+	
+	document.onmouseup=function(ev)//松开时
+	{
+		var oEvent=ev||event;
+		document.onmousemove=null; //将移动作用加载整个document上，防止甩出
+		document.onmouseup=null;  //同理
+		}
+		return false;//阻止火狐二次拖拽重影BUG
+	}	
+	
+}
+</script>
+
+</head>
+
+<body>
+<div id="parent">
+<div id="div1"></div>
+</div>
+<div id="div3">
+<div id="div4">
+
+ 1.new this void运算符用法
+2.function()括号里有时有东西， 
+ 
+有时没东西，为什么
+3.js的[]，（），{}，怎么用
+4：什么是对象字面量表达式，数值字面量、字符字面量
+5.局部变量，全局变量
+6.两本书，《javaScript DOM编程艺术》《java Script高级程序设计》 
+7.js的宿主环境Node
+8.netscape navigator是什么浏览器
+9.API是什么
+10.MIME什么意思
+11.MAX_VALUE是关键字么
+12. Unicode字符
+13.转义序列
+14.非打印字符22:36 2017/1/22
+15.传递参数
+16.robot.text
+17.为什么id和class设置一样的名字
+18.jdk安装包
+19.demo什么意思
+20.IEE-754
+21.apache
+22.my sql
+23.端口号
+24.zendStudio
+25.ascii字码表
+26.VisualStudio 可视化C语言编程软件
+27.Eclipse(java开发程序)
+28.跨终端适配
+29.代码托管
+30.requirejs/seajs/MVXframework
+31.继承&重用
+32.性能优化 http cache/local cache/compress/DOM render
+33.Restful API desgin&自动化（grunt/nodejs）
+
+35.在'JS中插入a标签为什么要这么写<a href="javascript:;">删除</a>'
+36.响应式布局
+37.bootSrap   Easy UI 
+38.前端MV*
+39.js内存泄漏
+40.webpack
+41.gulp   browserify
+42.GIS B/S
+43.CMS类系统
+44.C/S
+45.vue
+46.Mvc构架MvvM
+ 1.new this void运算符用法
+2.function()括号里有时有东西， 
+ 
+有时没东西，为什么
+3.js的[]，（），{}，怎么用
+4：什么是对象字面量表达式，数值字面量、字符字面量
+5.局部变量，全局变量
+6.两本书，《javaScript DOM编程艺术》《java Script高级程序设计》 
+7.js的宿主环境Node
+8.netscape navigator是什么浏览器
+9.API是什么
+10.MIME什么意思
+11.MAX_VALUE是关键字么
+12. Unicode字符
+13.转义序列
+14.非打印字符22:36 2017/1/22
+15.传递参数
+16.robot.text
+17.为什么id和class设置一样的名字
+18.jdk安装包
+19.demo什么意思
+20.IEE-754
+21.apache
+22.my sql
+23.端口号
+24.zendStudio
+25.ascii字码表
+26.VisualStudio 可视化C语言编程软件
+27.Eclipse(java开发程序)
+28.跨终端适配
+29.代码托管
+30.requirejs/seajs/MVXframework
+31.继承&重用
+32.性能优化 http cache/local cache/compress/DOM render
+33.Restful API desgin&自动化（grunt/nodejs）
+
+35.在'JS中插入a标签为什么要这么写<a href="javascript:;">删除</a>'
+36.响应式布局
+37.bootSrap   Easy UI 
+38.前端MV*
+39.js内存泄漏
+40.webpack
+41.gulp   browserify
+42.GIS B/S
+43.CMS类系统
+44.C/S
+45.vue
+46.Mvc构架MvvM
+ 1.new this void运算符用法
+2.function()括号里有时有东西， 
+ 
+有时没东西，为什么
+3.js的[]，（），{}，怎么用
+4：什么是对象字面量表达式，数值字面量、字符字面量
+5.局部变量，全局变量
+6.两本书，《javaScript DOM编程艺术》《java Script高级程序设计》 
+7.js的宿主环境Node
+8.netscape navigator是什么浏览器
+9.API是什么
+10.MIME什么意思
+11.MAX_VALUE是关键字么
+12. Unicode字符
+13.转义序列
+14.非打印字符22:36 2017/1/22
+15.传递参数
+16.robot.text
+17.为什么id和class设置一样的名字
+18.jdk安装包
+19.demo什么意思
+20.IEE-754
+21.apache
+22.my sql
+23.端口号
+24.zendStudio
+25.ascii字码表
+26.VisualStudio 可视化C语言编程软件
+27.Eclipse(java开发程序)
+28.跨终端适配
+29.代码托管
+30.requirejs/seajs/MVXframework
+31.继承&重用
+32.性能优化 http cache/local cache/compress/DOM render
+33.Restful API desgin&自动化（grunt/nodejs）
+
+35.在'JS中插入a标签为什么要这么写<a href="javascript:;">删除</a>'
+36.响应式布局
+37.bootSrap   Easy UI 
+38.前端MV*
+39.js内存泄漏
+40.webpack
+41.gulp   browserify
+42.GIS B/S
+43.CMS类系统
+44.C/S
+45.vue
+46.Mvc构架MvvM
+ 1.new this void运算符用法
+2.function()括号里有时有东西， 
+ 
+有时没东西，为什么
+3.js的[]，（），{}，怎么用
+4：什么是对象字面量表达式，数值字面量、字符字面量
+5.局部变量，全局变量
+6.两本书，《javaScript DOM编程艺术》《java Script高级程序设计》 
+7.js的宿主环境Node
+8.netscape navigator是什么浏览器
+9.API是什么
+10.MIME什么意思
+11.MAX_VALUE是关键字么
+12. Unicode字符
+13.转义序列
+14.非打印字符22:36 2017/1/22
+15.传递参数
+16.robot.text
+17.为什么id和class设置一样的名字
+18.jdk安装包
+19.demo什么意思
+20.IEE-754
+21.apache
+22.my sql
+23.端口号
+24.zendStudio
+25.ascii字码表
+26.VisualStudio 可视化C语言编程软件
+27.Eclipse(java开发程序)
+28.跨终端适配
+29.代码托管
+30.requirejs/seajs/MVXframework
+31.继承&重用
+32.性能优化 http cache/local cache/compress/DOM render
+33.Restful API desgin&自动化（grunt/nodejs）
+
+35.在'JS中插入a标签为什么要这么写<a href="javascript:;">删除</a>'
+36.响应式布局
+37.bootSrap   Easy UI 
+38.前端MV*
+39.js内存泄漏
+40.webpack
+41.gulp   browserify
+42.GIS B/S
+43.CMS类系统
+44.C/S
+45.vue
+46.Mvc构架MvvM
+</div>
+</div>
+
+</body>
+</html>

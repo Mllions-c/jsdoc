@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sort方法深入</title>
+</head>
+<body>
+
+</body>
+</html>
+<script type="text/javascript">
+
+// 回调函数，将函数A当做另一函数B的参数，B限制性，可根据情况，设定A执行的次数和时机
+// var ary = [10,2,4,52,7,4,34,15];
+// ary.sort(function(a,b){//a是当前项，b是后一项
+// 	// 原理，返回大于0,交换位置，小于等于零，不交换位置
+// 	return 1;//相当于反序，reverse
+// }) 
+
+// 二维数组排序（对象数组）
+var obj = [{name:'司马张张', age:46},{name:'丁世若水', age:74},{name:'崇阳可可', age:2}]//不要忘了都加引号
+// obj.sort(function(a,b){ 
+  	// return parseFloat(a.age)-parseFloat(b.age);//由小到大
+//  	return (parseFloat(a.age)-parseFloat(b.age))*-1;//由大到小
+//  })
+//  console.log(obj)
+
+ // 文字排序
+ obj.sort(function(a,b){ 
+ 	// return parseFloat(a.age)-parseFloat(b.age);//由小到大
+ 	return a.name.localeCompare(b.name);//由大到小
+ 	//原理：先转换为拼音，"dingshiruoshui".localeCompare("simazhangzhang")
+ 	//比首拼，然后第二个字母，直到比出结果，如果音相同，则比unique字码表
+ })
+ console.log(obj)
+</script>

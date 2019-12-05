@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>类数组转化为数组</title>
+	<script type="text/javascript" src="../../js/toArray.js"></script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+<script type="text/javascript">
+oName = document.getElementsByName('zhufeng');//
+odiv = document.getElementsByTagName('div');//元素集合,节点集合也是类数组，可用call转化为数组，ie678不兼容，arguments没事
+// var ary = Array.prototype.slice.call(odiv);
+// //ie678只能用遍历
+//  for(var i = 0; i<odiv.length; i++){
+//  	var ary = [];
+//  	ary[ary.length] = odiv[i];	
+//  }
+
+//使用try catch兼容处理
+var ary = [];
+try{
+  ary = Array.prototype.slice.call(odiv);
+ console.log(ary);
+}catch(e){
+//console.log(e);//不打印错误信息也可，如果不想让下面代码执行，又想补获错误，throw一个err即可
+for(var i = 0; i<odiv.length; i++){
+ 	
+  	ary[ary.length] = odiv[i];
+  		 }
+}
+console.log(ary)
+
+  	
+</script>
+</html>

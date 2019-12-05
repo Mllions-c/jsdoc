@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div{ width:100px; height:50px; background:red; margin:10px;}
+</style>
+<script>
+为什么不能返回原点
+window.onload=function()
+{
+	var oDiv=document.getElementsByTagName('div')
+	
+	for(i=0; i<oDiv.length; i++)
+	{
+	oDiv[i].timer=null     //给每个对象加定时器
+	oDiv[i].onmouseover=function() 	
+	{
+		startMove(this,400);
+		}
+		
+	oDiv[i].onmouseout=function()
+	{
+		startMove(this,100);
+		}
+	}
+}
+
+function startMove(obj,iTarget)
+{
+	clearInterval(obj.timer)
+	obj.timer=setInterval(function()
+	{
+	var speed=(iTarget-obj.offsetWidth)/6
+	speed=speed>0?Math.ceil(speed):Math.floor(speed);
+     if(obj.offsetWidth==iTarget)
+	 {
+		 clearInterval(obj.timer)
+		 }
+	 else
+	 {
+		 obj.style.width=obj.offsetWidth+speed+'px'
+		 document.title=obj.offsetWidth
+		 }
+	},30)
+}
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+
+</body>
+</html>

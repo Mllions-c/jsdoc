@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>千分符</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+</head>
+<body>
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+var str = "16834791751";
+// 方法一
+// var reg = /^(\d{1,3})((\d{3})+)$/;
+// var str = str.replace(reg, function(){
+	
+// 	return arguments[1] +","+ arguments[2].replace(/\d{3}(?!$)/g,function(){
+// 		return arguments[0] +","
+// 	})
+
+// });
+
+//方法2
+// var reg = /\d(?!$)/g;
+// var str = str.replace(reg,function(r,i){
+// 	if((str.length - i -1)%3===0){
+// 		return r + ",";
+// 	}else{
+// 		return r ;
+// 	}
+// });
+
+//方法3
+str = str.split("").reverse().join("");//翻转\
+console.log(str);
+// var reg = /(\d{3}(?!$))/
+str = str.replace(/(\d{3}(?!$))/g,"$1,");
+str = str.split("").reverse().join("");//再翻转
+console.log(str);
+</script>
+	
+</body>
+</script>

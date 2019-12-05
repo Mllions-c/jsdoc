@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+'use strict';
+ function fn () {
+	/* setTimeout(function(){
+		 console.log(this.id);
+	 }.bind(this))*/
+	 //用箭头函数不用bindthis,但是外面的call都是用的
+	 setTimeout(() => {
+		 console.log(this.id)
+	 })
+ }
+	let obj = {id:123};
+	fn.call(obj)
+</script>
+</html>

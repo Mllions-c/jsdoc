@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+
+
+/*复制数组*/
+/*let arr = [1, 2, 3];
+let arr2 = Array.from(arr);//方法1
+let arr2 = arr.slice(0);//方法2
+console.log(arr, arr2);*/
+
+//类字符串
+let syb = Symbol('sybx');  
+let syb2 = Symbol('syby');
+//syb == syb2 //false 即使是相同值，也是不等的，解决了普通字符串覆盖问题
+//console.log(syb);
+//用toStrig转化为字符串才可以做运算
+let obj = {};
+obj[syb] = 123;
+obj[syb2] = 234; //让syb做为对象的key，这样就无法改变
+console.log(obj) Object {Symbol(sybx): 123, Symbol(syby): 234}
+</script>
+
+
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+
+</head>
+
+<body>
+<div id="div1"></div>
+
+</body>
+
+</html>
+<script>
+ //方法1
+
+/* var isXML=function(el){
+       var documentElement=el &&(el.ownerDocument||el).documentElement;
+	   return documentElement ? documentElement.nodeName !=="HTML": false;
+}*/
+//方法2
+/*var isXML=function(document){
+          return(!!document.xmlVersion)||(!!document.xml)||(toString.call(document)
+		  =='[object XMLDocument]')
+		  ||(document.nodeType==9&& document.documentElement.nodeName
+		  !='HTML');
+}*/
+
+alert(isXML(document.getElementById('div1')))
+
+
+</script>

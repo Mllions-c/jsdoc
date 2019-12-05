@@ -1,0 +1,36 @@
+<!doctype html>
+<html onClick="alert('html')">
+<head>
+<meta charset="utf-8">
+<title>1</title>
+<style>
+div{padding:100px}
+</style>
+<script>
+//——点击出现当前XY坐标clientXclientY(可视区域坐标)
+/*window.onload=function()//点击出现XY坐标
+{
+	document.onclick=function(ev)
+	{
+		
+		 //alert(ev.clientX+','+ev.clientY)//FF
+		  //alert(event.clientX+','+event.clientY) //IE
+		  var oEvent=ev||event//兼容处理
+		  alert(oEvent.clientX+','+oEvent.clientY)
+		}
+}*/
+</script>
+</head>
+<!-- 取消冒泡var oEvent=ev||event
+		oEvent.cancelBubble=true//取消事件冒泡-->
+<body onClick="alert('body')" >
+<div style="background:#ccc" onClick="alert(this.style.background)">
+      <div style="background:green" onClick="alert(this.style.background)">
+            <div style="background:red" onClick="alert(this.style.background)">
+            </div>
+      </div>
+</div>
+
+
+</body>
+</html>

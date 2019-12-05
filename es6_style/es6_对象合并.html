@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+
+/*对象合并*/
+/*let obj1 = {x: 'x'};
+let obj2 = {y: 'y'};
+let obj3 = {x: 'x2'};
+
+let obj4 = Object.assign(obj1, obj2, obj3);//将obj2和obj3的值覆盖到obj1；
+//返回值为引用类型
+console.log(obj1, obj2, obj3, obj4, obj1 === obj4);//ture*/
+
+//合并的应用，给对象加方法，可以避免直接用prototype会把struct覆盖
+/*Object.assign(Util.prototype, {
+  getTime() {
+    console.log(new Date, this, '---');
+  }
+});*/
+
+/*set应用1去重操作*/
+//let obj = {a: 'a'};
+/*var s = new Set([obj, obj, NaN, NaN, +0, -0, {}, {}, null, null,])//
+console.log(s, s.size);//返回值重复去掉
+s.delete(obj)//删除元素，返回值布尔
+s.add(null)//添加元素，添加后的对象。
+s.has(obj)//返回值布尔
+s.clear()//清空*/
+
+//取Set里面的值先要通过entries迭代器取得键值对，然后遍历
+/*let ents = s.entries();
+for(let item of ents) {
+  console.log(item);
+}
+
+也可以用拓展运算符...将Set转化为数组
+let set= new Set(['a', 'b', 'c','a']);
+let arr = [...set];
+
+*/
+
+//用set的方法数组去重
+let set = new Set(arr);//数组转set，自动去重
+let arr2 = Array.from(set);//Set转为数组
+</script>
+
+
+</html>

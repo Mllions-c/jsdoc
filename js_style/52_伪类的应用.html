@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>伪类的应用</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+	<style type="text/css">
+	*{margin: 0; padding: 0;}
+		#box{ height: 200px; width: 200px; border: 10px solid red; margin: 20px; padding: 30px; }
+	ul,li{list-style: none}
+	#list{ width: 300px; margin: 0 auto; border: 1px solid red; padding: 10px;}
+	
+	#list:after{display: block; width: 0;height: 0;content: "";
+		clear: both}/*//在受浮动影响的元素加上伪类after*/
+	#list li{width: 100px; height: 100px; float: left;background:#6EEAF6}
+	#list li:nth-child(4n+1){background: lightblue;}
+	#list li:nth-child(4n+2){background: lightgreen}
+	
+	</style>
+</head>
+<body>
+<div class="box">
+	<p>
+	如果想得到就必须付出，还需要学会坚持，如果真的觉得很难，那就放弃，但是放弃以后，不应该抱怨。我觉得人生真就是这样，世界是平衡的，每个人都是通过自己的努力，去决定自己生活的样子。
+	</p>
+</div>
+	<ul id="list">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+//获取伪类样式的方法
+var list = document.getElementById('list')
+console.log(window.getComputedStyle(list,"nth-child(4n+2)").background)
+</script>
+	
+</body>
+</script>

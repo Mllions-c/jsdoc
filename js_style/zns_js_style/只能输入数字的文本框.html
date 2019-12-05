@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+window.onload=function()
+{
+	   var oTxt=document.getElementById('txt1');
+	   oTxt.onkeydown=function(ev)
+	   {
+		  var oEvent=ev||event;
+		  alwe
+		  if( oEvent.keyCode!=8&&oEvent.keyCode!=116&&
+		  oEvent.keyCode!=37&&oEvent.keyCode!=39&&oEvent.keyCode<48||oEvent.keyCode>57)//删除、F5，左右、键数字
+		  {
+		   return false;  
+		  }
+		 }
+	}
+</script>
+</head>
+
+<body>
+<input type="text" id="txt1" />
+</body>
+</html>

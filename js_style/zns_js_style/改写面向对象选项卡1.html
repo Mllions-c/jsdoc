@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1 input{ background:white;}
+#div1 input.active{ background:yellow;}
+#div1 div{ width:200px; height:200px; background:#ccc; display:none;}
+</style>
+<script>
+//———面对过程改写面对象
+//1)不能有函数嵌套
+var aBtn=null;
+var aDiv=null;
+window.onload=function()
+{
+    var oDiv=document.getElementById('div1')
+	aBtn=oDiv.getElementsByTagName('input')
+	aDiv=oDiv.getElementsByTagName('div')
+	
+	for(var i=0; i<aBtn.length; i++ )
+	{
+	      aBtn[i].index=i;
+		  
+		 aBtn[i].onclick=fnClick
+	}
+	
+}//onload-end
+function fnClick()
+		 {
+			 for(var i=0; i<aBtn.length; i++)
+			 {
+				     aBtn[i].className=''
+					 aDiv[i].style.display='none' 
+			  }
+			 this.className='active'
+			 aDiv[this.index].style.display='block'
+		 }//aBtn[i].onclick-end
+</script>
+</head>
+
+<body>
+<div id="div1">
+<input  class="active" type="button" value="aaa" />
+<input type="button" value="bbb" />
+<input type="button" value="ccc" />
+<div style="display:block">sgagag</div>
+<div>szcbnbvg</div>
+<div>ipiopio,</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正则实战</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+//获取一个字符串中出现次数最多的字符
+var str = "zhufengpeeeeeeeixunyangfanqihang";
+var obj = {};
+var reg = /[a-z]/gi;
+str.replace(reg,function(){
+	var val = arguments[0];
+	obj[val] >= 1 ? obj[val] +=1 : obj[val] =1;//此时val代表的值带有[],所以不能用.的方法	
+});
+// 教程方法
+//获取对象里的最大值；
+// var maxNum = 0;
+// for(var key in obj){	
+// 	obj[key] > maxNum? maxNum = obj[key] : null;
+// }
+// //找到最大值的主人
+
+// for(var key in obj){	
+// 	obj[key] == maxNum? console.log("字符串中出现频率最多的是"+key+":"+maxNum+"次") : null;
+// }
+
+
+//自创方法
+/*//将所有字符重复的个数添加到新数组并排序；
+var ary = [];
+for(var key in obj){	
+	ary.push(obj[key])
+}
+var res = ary.sort(function(a,b){		
+	 return a-b;	
+})
+//为最大的个数找到对应的字符并输出
+var num = res[res.length-1];
+for(var key in obj){
+	if(obj[key] == num){
+	console.log(key+":"+num)
+}
+}*/
+
+// console.log(ary);
+// var ary = obj.toString();
+// console.log(ary);
+
+//实例3
+var str = "my name is {0}, my age is {1}, I com from {2}, I love {3}~";
+var ary = ["丁亚丽","18","china","javascript"];
+var reg = /{(\d)}/g;
+var str = str.replace(reg,function(){
+	
+	return ary[arguments[1]]
+	//return ary[RegExp.$1];检查/IE不兼容
+
+})
+console.log(str);
+</script>
+	
+	<script type="text/javascript" src="../../js/utils.js"></script>
+	<script type="text/javascript" src="../../js/demo_js/tab.js"></script>
+</body>
+</script>

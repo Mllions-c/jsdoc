@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+/*var box='lee'
+box.age=28;
+alert(box.age)
+没定义*/
+
+/*var box=new Object();
+box.name='lee';
+var box2=box;
+box2.name="kkk"
+alert(box2.name);
+alert(box.name)
+box也修改了*/
+
+/*//参数都输按值传递，不会按引用传递
+function box(num){
+	num+=10;
+	return num;}
+var num=50;
+alert(num);//50*/
+
+/*//判断对象具体类型
+alert(box instanceof Array);
+alert(box instanceof Object);
+alert(box instanceof RegExp)
+var box=new String('lee')
+alert(box instanceof String)
+基本类型如果不是new出来的，要用typeof检测*/
+
+/*即使是穿参也不能将局部变为全局
+var box='lee';
+function setbox(box){
+	alert(box);//red}
+setbox('red');
+aelrt('box')//lee*/
+
+<!--if，for语句没有作用域-->
+
+//初始化函数类型
+//变量初始化函数
+/*var box=function(num1,num2){
+	return num1+num2;	
+}
+alert(1,2)*/
+
+/*构造函数方法，不推荐
+var box=new Function('num1','num2','return num1+num2');
+alert(box(1,2))*/ 
+
+//函数名其实是函数的指针
+
+//函数做参数传递时，有参数，其实是返回值来传递，没参数，作为函数传递
+
+/*阶乘做递归
+function box(num){
+	if(num<=1){
+		return 1;		
+	}else{
+			return num*arguments.callee(num-1); //4*3*2*1，arguments.callee调用自身，指向函数本身，避免改动函数名时得麻烦
+			
+			}
+}*/
+
+/*window.color="re
+ 
+ d";//相当于var color="red"*/
+/*
+函数的length属性，返回函数参数的个数*/
+
+/*//call和apply的作用在于调用冒充对象的作用域，从而调用本来不能调用的变量
+var color='red';
+var box={color:'blue'};
+function sayColor(){
+	alert(this.color);
+}
+sayColor.call(box)//调用box的作用域*/
+
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

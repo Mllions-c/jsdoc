@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>正向预查和负向预查</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+</head>
+<body>
+	<script type="text/javascript" src="../../js/utils.js"></script>
+<script type="text/javascript">
+//匹配不捕获，写在括号里，用不需要提取时，节省性能
+// var reg = /^(?:\+|-)?\d(?:\.\d+)?$/;
+
+//用test方法时，匹配的内容在RegExp.$1上
+// reg.test(str);
+
+// 当加了g之后，补获和匹配都会改变reg的lastIndex值，例如exec后的test不会从默认索引开始。当lastIndex的索引用完之后，再匹配会false或补获null，再下一次的索引就是0了。即使匹配或补获的不是同一字符串，索引都会累加改变。
+// 为了避免这种坑，在做正则时，要手动归零。reg.lastIndex = 0;
+// match没有这种坑
+
+//将HTML中的注释去掉
+// var reg = /<\!--[\s\S]*?-->/g
+// document.body.innerHTML = document.body.innerHTML.replace(reg,"");
+
+//非空字符串
+// var reg = !/^\s$/;
+
+//去首尾空格
+// var reg = /^ +| +$/g;
+
+// 正则的断言
+// 正向预查只修饰前面
+
+//断言做千分符
+// var reg = /\d(?=(\d{3})+$)/g;
+// str.replace(reg,"$1,");
+// 断言时零宽度的，只是作为条件,不是正则
+
+//匹配五位对称数
+// var reg = /^(\w)(\w)\w\2\1$/
+//例如12321,abcba
+
+//正则字符串去重复，不是去重
+var str = "asdsasfffffdk133324jjdddd";
+var reg = /(\w)\1+/g;
+var str = str.replace(reg,"$1");
+console.log(str);
+</script>
+	
+</body>
+</script>

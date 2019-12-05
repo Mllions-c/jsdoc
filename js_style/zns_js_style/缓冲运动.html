@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{ width:100px; height:100px; background:red; position:absolute;
+left:0px; top:50px;}
+#div2{ width:1px; height:300px; background:#000; position:absolute; left:300px; top:0}
+
+</style>
+<script>
+/*1)距离大，速度大
+距离小，速度小
+速度和距离成正比
+
+2)绝对值向大取正
+alert(Math.ceil(9.1))//10
+alert(Math.ceil(-9.1))//-9
+3)绝对值向小取正
+alert(Math.floor(4.6))//4
+alert(Math.floor(-4.6))//-5*/
+//—— 缓冲运动,固定位置停止，双方向（不要忘了速度取整）
+function startMove()
+{
+	var oDiv=document.getElementById('div1') //oDiv命名不能有数字
+    setInterval(function(iTarget)
+	{	
+		var speed=(iTarget-oDiv.offsetLeft)/7; <!--控制缓冲快慢,-->
+		speed=speed>0?Math.ceil(speed):Math.floor(speed);
+		oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		document.title=oDiv.offsetLeft+','+speed;//让title显示等式右面的值/加,号还可以双显示(TMD Cool)
+		},30)
+	}
+
+</script>
+</head>
+
+<body>
+<input id="btn1" type="button" value="开始运动"； onClick="startMove(300)" />
+<input id="btn2" type="button" value="开始返回"； onClick="startMove(0)" />
+
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

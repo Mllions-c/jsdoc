@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>数组去重</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	Array.prototype.myUnique = function () {
+		var obj = {};
+		for(var i = 0; i< this.length; i++) {
+			var cut = this[i];
+			if (obj[cut] == cut){
+				
+			    this[i] = this[this.length-1];
+			    this.length--;
+			    i --;
+			    continue;
+			}
+			obj[cut]=cut;
+		}
+		obj=null;
+	};
+	var arr= [1,2,2,4,6,7,7,8,8];
+	arr.myUnique();
+	console.log(arr);
+</script>
+</html>

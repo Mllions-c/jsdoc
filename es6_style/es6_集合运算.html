@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+//用Set可以实现集合运算
+
+/*let s1 = new Set([1, 2, 5, 7]);
+//并集
+let s2 = new Set([1, 4, 5, 8]);
+let sb = new Set([...s1, ...s2]);
+console.log(sb, arr);*/
+
+//交集,简写了
+//let sb = new Set([...s1].filter(item => s2.has(item)));
+//差集
+//let sb = new Set([...s1].filter(item => !s2.has(item)));
+
+/*当对象被删除时，set里的引用会被自动删除，解决内存泄漏的问题*/
+
+//map的Api和set相同，他的key是只能用字符串或者symbol
+/*let objMap = {'objMap': 'objMap'};
+let arrMap = ['a', 'r', 'r']; 
+let map = new Map([[objMap, '0'], [arrMap, 'a'], [1, 2]]);//他的key是只能用字符串或者symbol
+console.log(map);
+console.log([...map])//转为数组*/
+
+// Promise操作
+let p = new Promise ((resolve, reject) => {
+  setTimeout(() => {
+    console.log(123);
+    resolve(123);
+  },1000);
+})
+p.then(() => {//resolve启动时，执行p
+  console.log('succ')
+})
+.catch(() =>{ //reject启动时，执行catch
+  console.log('err');
+});
+
+</script>
+
+
+</html>

@@ -1,0 +1,88 @@
+body{padding:0;
+	margin:0;
+	font-size:16px;
+	color:#F9F; width:1000px;
+	margin:0 auto;
+	
+	background:#fff;}
+
+	
+	
+	
+	
+	
+	}
+h1,h2,h3,h4,h5,h6,p,strong,
+em{ padding:0;
+    margin:0;
+	font-style:normal;
+	font-weight:normal;
+	
+	}
+a:link,a:visited{
+	color:#000;
+	text-decoration:none;
+	float:none;}
+a:hover{
+	color:#cc0000;
+}
+
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+	
+	}
+img{
+	border:none;}
+
+
+
+
+
+#tophead{height:44px;width:840px; margin-bottom:19px; margin-top:22px; padding-left:160px; }
+#tophead .img{ float:left;}
+.sousuoblank{ height:37px; width:291px; border:1px solid #c1c4cb; border-right:0; float:left; margin:3px 0 0 42px;}
+.xuanxiang{ height:35px; width:48px;float:left; line-height:32px; padding:0 10px 0 10px; background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/xialabiao.png) no-repeat; margin-top:3px; color:#a8a8a8;}
+.shuru{ height:25px; width:175px;font-size: 14px; border:none;padding:4px; float:left;}
+.sousuoblank img{ float:right; height:23px; width:23px; margin:5px 6px 0 0; }
+
+.ssbutton button{ color:#fff; font-size:16px; float:left; height:37px; width:90px; padding:8px 8px 16px 3px; margin:4px 0 0 0; background:#5da4e6; border:none; font-family:"Microsoft YaHei"}
+
+
+
+.thicon1{ margin:8px 0 0 0; display:inline; float:right;}
+.thicon1 .icon{ background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/qzoneicon.png) no-repeat; width:24px;height:25px; float:left;margin-right:20px;}
+.thicon2{ margin:8px 0 0 0; display:inline; float:right;}
+.thicon2 .icon2{ background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/weiboicon.png); width:17px;height:24px; float:left;margin-right:20px;}
+.thicon3{ margin:8px 0 0 0; display:inline; float:right;}
+.thicon3 .icon3{ background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/mailicon.png); width:22px;height:24px; float:left;margin-right:20px;}
+.thicon4{ margin:8px 0 0 0; display:inline; float:right;}
+.thicon4 .icon4{ background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/dyicon.png); width:22px;height:24px; float:left; margin-right:20px;}
+
+
+
+#daohang{ width:1000px;height:65px; line-height:22px; font-size:14px; margin:0 auto; background:url(../../demo/tecent%E9%A6%96%E9%A1%B5/20170115222515/chanelnavbeta2_141013.jpg) repeat-x;}
+.daohangsc1{ border:1px dashed #000; float:left; margin:8px 12px 8px 20px;}
+.daohangsc1 a{ margin:0 4px 0 3px; color:#FFF;}
+#adtop{ height:75px; width:1000px;border:1px dashed #999; margin-top:12px;}
+.adtopl{ float:left;}
+.adtopr{ float:right;}
+#mainbody{ width:1000px; height:970px;border:2px solid #FF0; margin-top:12px;}
+.layoutleft{ width:700px; height:970px;border:1px solid #F00; float:left;}
+.layoutleft .leftleft{ width:350px; height:970px; background:#999; float:left; }
+.layoutleft .leftleft .lltitle{ height:34px; width:350px; background:#CCC;}
+.layoutleft .leftleft .llmain{ height:936px; width:350px; background:#F66;}
+.layoutleft .leftright{ width:330px; height:252px; background:#CCC; float:right;}
+.layoutleft .leftright2{ width:330px; height:330px; background:#999; float:right;}
+.layoutleft .leftright3{width:330px; height:389px;background:#ccc;float:right; }
+
+.layoutright{width:280px; height:970px;border:1px solid #0F0; float:right;}
+.layoutright .lor1{ width:280px; height:240px; background:#9FF;}
+.layoutright .lor2{ width:280px; height:320px; background:#CC3; margin-top:12px;}
+.layoutright .lor3{ width:280px; height:191px; background:#66F;margin-top:12px;}
+.layoutright .lor4{ width:280px; height:183px; background:#9CC;margin-top:12px;}
+
+
+
+

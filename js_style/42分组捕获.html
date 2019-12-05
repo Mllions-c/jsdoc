@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>分组捕获</title><link rel="stylesheet" type="text/css" href="css/tab.css">
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+//正则分组
+// 1)改变优先级
+// 2)分组引用
+// \1代表和第一个分组出现一模一样的内容
+// \2代表和第二个分组出现一模一样的内容
+// var reg = /^(\w)\1(\w)\2$/
+
+//分组捕获->在捕获的时候，先捕获大正则，后捕获小正则
+var reg = /^(\d{2})(\d{4})(\d{4})(\d{2})(\d{2})(?:\d{2})(\d)(\d|X)$/;
+var str = "222401199212011722";
+// console.log(reg.exec(str));"222401199212011722"1:"22"2:"2401"3:"1992"4:"12"5:"01"6:"17"7:"2"8:"2"index:0input:222401199212011722length9
+//?:的作用是只匹配，不捕获；,不捕获的不占索引
+</script>
+	
+	<script type="text/javascript" src="../../js/utils.js"></script>
+	<script type="text/javascript" src="../../js/demo_js/tab.js"></script>
+</body>
+</script>

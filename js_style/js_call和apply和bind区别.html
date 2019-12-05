@@ -1,0 +1,18 @@
+<script type="text/javascript">
+/*严格模式下非严格模式下，call谁，fn中的this就是谁，但是不包括一下两种情况，他们的this是window。*/
+fn.call(null);
+fn.call(undefined);
+// 严格模式下，this改变
+fn.call(null);
+fn.call(undefined);
+
+// aplly的作用和call一模一样，都是改变this的指向，但是参数设置不同
+fn.call(obj,100,200);
+fn.apply(obj,[100,200]);
+
+// bind和call的作用类似，但是不是立即执行
+fn.call(obj,100,200);//执行了
+var temFn() = fn.bind(obj,100,200);//不主动执行，需要自行执行，体现了预处理思想
+temFn()
+
+// 当判断this的方法与call等冲突时，call等优先

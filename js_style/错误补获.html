@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>错误补获</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+// console.log(num);//浏览器报错后，后面的代码停止执行
+// console.log('123');
+
+// 异常信息补获方法
+// try{
+// console.log(num);
+// }catch(e){//参数必须写，任意
+// console.log(e);//打印错误类型
+// console.log(e.massage)//打印标准错误信息
+// }finally{
+//   //这里的代码不管是否报错，都要执行，可以不用
+// }
+// console.log('123');//这样后面的就能继续执行
+
+//既想补获错误信息，又不想让下面代码执行
+try{
+console.log(num);
+}catch(e){
+	throw new Error("上面出错了，先等等")
+	//可选标准错误类型
+	// 1.new ReferenceError ->引用错误
+	// 2.new TypeError ->类型错误
+	// 3.new RangeError ->范围错误
+
+}
+console.log('123');//这样就不能继续执行
+</script>
+</html>

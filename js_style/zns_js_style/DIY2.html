@@ -1,0 +1,444 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>补肾网页-millions</title>
+
+<link rel="stylesheet" type="text/css" href="DIY2.css">
+<script src="../../../js/jquery-3.1.1.js"></script>
+<script src="../../../js/DIY2.js"></script>
+<script>
+window.onload=function()
+{
+	var oDiv=document.getElementById('div1');
+	var oUl=oDiv.getElementsByTagName('ul')[0];
+	var aLi=oDiv.getElementsByTagName('li');
+
+
+	oUl.innerHTML+=oUl.innerHTML ;
+	oUl.style.width=aLi[0].offsetWidth*aLi.length+'px';
+    
+	function move () 
+	{  
+		 if(oUl.offsetLeft<-oUl.offsetWidth/2) 
+			{
+				oUl.style.left=0 ;
+			}
+		if(oUl.offsetLeft>0)  
+			{
+				oUl.style.left=-oUl.offsetWidth/2+'px';
+			}
+		oUl.style.left=oUl.offsetLeft+2+'px'; 
+	}
+	
+	var timer=setInterval(move,30)	
+	oUl.onmouseover=function() 
+		  {
+			  clearInterval(timer) 
+		  }
+	oUl.onmouseout=function ()
+		  {
+			  timer=setInterval(move,30)
+		  }
+}
+</script>
+</head>
+
+   <body>
+         <div id="toplink">
+                <span><a href="#">TAG</a> 丨
+                            <a href="#"> 网站导航</a>
+                </span> 
+                             <a href="#">食疗补肾网</a>
+                             丨 食疗补肾、肾虚的食疗方法请关注食疗补肾网！
+                <div id="tabs">
+                        <div  class="tab bg">1</div>
+                        <div class="tab">2</div>
+                        <div class="tab">3</div>
+                        <div class="tab">4</div>
+                        <div class="tab">5</div>
+                        <div class="tab">6</div>
+                </div>
+      
+        </div>
+<!---toplink end---------------------------------------------------------------------------------------------------------------------------------->
+       
+       <div id="igs">
+        <div class="ig"><img src="../../demo/DIY轮播图片/lunbo7.jpg" /></div>
+                <div class="ig"><img src="../../demo/DIY轮播图片/lunbo2.jpg" /></div>
+                <div class="ig"><img src="../../demo/DIY轮播图片/lunbo3.jpg" /></div>
+                <div class="ig"><img src="../../demo/DIY轮播图片/lunbo4.jpg" /></div>
+                <div class="ig"><img src="../../demo/DIY轮播图片/lunbo1.jpg" /></div>
+                <div class="ig"><img src="../../demo/DIY轮播图片/lunbo5.jpg" /></div>
+        </div>
+<!----igs end---------------------------------------------------------------------------------------------------------------------------------->
+          
+         <div id="menu">
+                  <ul>
+                             <li class="home"><a href="#">HOME</a></li>
+                             <li><a href="#">补肾食物有哪些</a></li>
+                             <li><a href="#">食疗补肾方法</a></li>
+                             <li><a href="#">肉苁蓉补肾法</a></li>
+                             <li><a href="#">补肾食品推荐</a></li>
+                  </ul>
+        </div>
+<!----menue end---------------------------------------------------------------------------------------------------------------------------------->
+            
+        <div id="main">
+               <div class="content">
+                     <div class="topic">
+                            <span class="rlink">
+                             <a href="#">食疗补肾方技法</a>丨
+                             <a href="#">肉苁蓉补肾</a>丨
+                             <a href="#">补肾食品推荐</a>
+                             </span>
+                             <span class="title">补肾食物有哪些</span>
+                     <div class="topcon">
+                             <div class="hot">
+                                    <a href="#"><img src="../../../img/img_zns_note/focus.jpg" /></a>
+                     <div class="hottext">
+                           <h3><a href="#">史上最全！SKIN79系列BB霜 购买指南</a></h3>
+                                    <p>夏季暑热，多数人食欲不振。鲜姜中的姜辣素能刺激胃肠粘膜，有利于食物的消化和吸收，并对心脏和血管有一定刺激作...  
+                                             <a href="#">[阅读]</a>
+                                    </p>
+                     </div>
+              </div>
+              
+                        <div class="hotrbox">
+                                <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                <p>
+                                         <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                          水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                </p>
+                        </div>
+                        <div class="hotrbox">
+                                <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                <p>
+                                         <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                          水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                </p>
+                        </div>
+                        <div class="hotrbox">
+                                <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                <p>
+                                         <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                          水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                </p>
+                        </div>
+                             <ul>
+                                     <li>
+                                           <em>4-10</em>
+                                           <a href="#">山药怎么吃最能健脾益气？</a>
+                                     </li>
+                                     <li>
+                                           <em>4-10</em>
+                                           <a href="#">山药怎么吃最能健脾益气？</a>
+                                     </li>
+                                     <li>
+                                           <em>4-10</em>
+                                           <a href="#">山药怎么吃最能健脾益气？</a>
+                                     </li>
+                            </ul>
+                            <div style="clear:both"></div>
+                  </div>
+<!-----------topcon end---------------------------------------------------------------------------------------------------------------------------------->
+             </div>
+<!-------topic end---------------------------------------------------------------------------------------------------------------------------------->
+             
+             <div class="homead">
+                  <a href="#"><img src="../../../img/img_zns_note/lbanner.jpg"></a>
+             </div>
+             <div class="topic">
+                      <span class="rlink">
+                       <a href="#">食疗补肾方技法</a>丨
+                       <a href="#">肉苁蓉补肾</a>丨
+                       <a href="#">补肾食品推荐</a>
+                       </span>
+                        <span class="title">补肾食物有哪些
+                        </span>
+                        <div class="topcon">
+                                <div class="hot">
+                                       <a href="#"><img src="../../../img/img_zns_note/focus.jpg" /></a>
+                                              <div class="hottext">
+                                                    <h3><a href="#">史上最全！SKIN79系列BB霜 购买指南</a></h3>
+                                                          <p>夏季暑热，多数人食欲不振。鲜姜中的姜辣素能刺激胃肠粘膜，有利于食物的消化和吸收，并对心脏和血管有一定刺激作...  
+                                                          <a href="#">[阅读]</a>
+                                                          </p>
+                                              </div>
+                                 </div>
+              
+                        <div class="hotrbox">
+                               <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                     <p>
+                                            <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                             水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                     </p>
+      
+                         </div>
+                       <div class="hotrbox">
+                               <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                     <p>
+                                            <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                             水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                     </p>
+                       </div>
+                       <div class="hotrbox">
+                               <a class="hehe" href="#"><img src="../../../img/img_zns_note/pic1.jpg" /></a>
+                                     <p>
+                                            <strong><a href="#">春季养生：这几种水果宜少吃</a></strong>
+                                             水果含有丰富的维生素，而且口味好，自古以来都是人们的最爱，但是吃水果要看时间最好不要吃反季水果...
+                                     </p>
+                        </div>
+               
+                       <ul>
+                                   <li><em>4-10</em><a href="#">山药怎么吃最能健脾益气？</a>
+                                   </li>
+                                   <li><em>4-10</em><a href="#">山药怎么吃最能健脾益气？</a>
+                                   </li>
+                                   <li><em>4-10</em><a href="#">山药怎么吃最能健脾益气？</a>
+                                   </li>
+                         </ul>
+                 
+                    <div style="clear:both"></div>
+                    </div>
+<!------------topcon end---------------------------------------------------------------------------------------------------------------------------------->
+             </div>
+<!-------topic end---------------------------------------------------------------------------------------------------------------------------------->
+              
+                    <div id="div1">
+                               <ul>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic1.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic2.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic3.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic4.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic5.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic6.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic7.jpg"></li>
+                                        <li><img src="../../demo/DIY2无缝滚动/pic8.jpg"></li>
+                               </ul>
+                    </div>
+           </div>
+<!---------content end---------------------------------------------------------------------------------------------------------------------------------->
+          
+          <div class="sidebar">
+                   <div class="mrbox">
+                           <h2>YS养生排行榜</h2>
+                           <ul class="aa">
+                                   <li class="wbg clearfix">
+                                         <div class="tj">
+                                                 <p class="bb"> 
+                                                         <a href="#"><img src="../../../img/img_zns_note/pic2.jpg" /></a>
+                                                         <span><strong>1s1</strong></span>
+                                                         <span><a href="#">漠蓉保健养生茶</a></span>
+                                                         <span class="weblink">淘宝店铺:<a href="#">漠蓉尚品</a></span>
+                                                          本月售出：<em>19860</em> 件
+                                                 </p>
+                                           </div>
+                                    </li>
+                                    <li class="wbg">
+                                         <div class="tj">
+                                                 <p class="bb"> 
+                                                         <a href="#"><img src="../../../img/img_zns_note/pic2.jpg" /></a>
+                                                         <span><strong>1s1</strong></span>
+                                                         <span><a href="#">漠蓉保健养生茶</a></span>
+                                                         <span class="weblink">淘宝店铺:<a href="#">漠蓉尚品</a></span>
+                                                          本月售出：<em>19860</em> 件
+                                                 </p>
+                                           </div>
+                                    </li>
+                                    <li class="wbg clearfix">
+                                         <div class="tj">
+                                                 <p class="bb"> 
+                                                         <a href="#"><img src="../../../img/img_zns_note/pic2.jpg" /></a>
+                                                         <span><strong>1s1</strong></span>
+                                                         <span><a href="#">漠蓉保健养生茶</a></span>
+                                                         <span class="weblink">淘宝店铺:<a href="#">漠蓉尚品</a></span>
+                                                          本月售出：<em>19860</em> 件
+                                                 </p>
+                                           </div>
+                                    </li>
+                                    
+                          
+                        </ul>
+                        <ul class="toplist">
+                                 <li class="abc "><em>8600 件</em><span>4</span><a href="#">法兰西玫瑰 美容养颜佳品</a></li>
+                                 <li class="abc clearfix"><em>5678 件</em><span>5</span><a href="#">漠蓉保健养生茶王 男士补肾茶</a></li>
+                                 <li class="abc"><em>4214 件</em><span>6</span><a href="#">精装茉莉花茶 浓香花草茶叶</a></li>
+                                 <li class="abc clearfix"><em>8966 件</em><span>7</span><a href="#">内蒙古托县野生枸杞王</a></li>
+                                 <li class="abc"><em>1246 件</em><span>8</span><a href="#">野生杜仲茶 降血压血脂补肾</a></li>
+                         </ul>
+                </div>
+<!---------mrbox end---------------------------------------------------------------------------------------------------------------------------------->
+                       <div class="mrbox dongtai">
+                              <h2>关注健康养生动态</h2>
+                              <div class="wxbg">
+                                        <div class="weixin" style="clear:both">
+                                                <h3 class="title green">关注漠蓉微信，掌握健康资讯</h3>
+                                                <span class="wx_text"><strong class="img"></strong><em>微信“扫一扫”<strong>对准左侧</strong>二维码添加关注。</em></span>
+                                                <span class="wx_qr"><strong class="img"></strong></span>
+                                                <h3 class="title orange">收听微博关注健康</h3>
+                                                <img class="weibo" src="../../../img/img_zns_note/rpic.jpg" />
+                                        </div>
+                              </div>
+                         </div>
+                  </div>
+            </div>
+<!------sidebar end---------------------------------------------------------------------------------------------------------------------------------->
+            <div style="clear:both"></div>
+            </div>
+<!-------main end---------------------------------------------------------------------------------------------------------------------------------->
+            <div id="taobao">
+                      <div class="tbpic">
+                         <span class="img"></span>
+                         <p>食疗养生产品国内目前最主要的漠蓉尚品、村品鹿茸、藏喜堂、杞里香几个国内养生食品品牌引导着         注重养生健康人群.这几个品牌那些产品才是最适合自己的呢？
+                         </p>
+                      </div>
+                      <div class="tbbox">
+                              <div class="tbcon">
+                                      <h2>NO.1</h2>  
+                                      <span>
+                                         <h3><a href="#">漠蓉尚品就是肉苁蓉</a></h3>
+                                         <a href="#"><img src="../../../img/img_zns_note/pic3.jpg" /></a>
+                                      </span>         
+                                      <p>历代补肾补益方剂中，肉苁蓉的使用频率最高，现代医学研究表明，肉苁蓉提取物能够明显延长阳虚动物的耐冻时间！<br />
+                                               <em><a href="#">[详细]</a></em>
+                                      </p>
+          
+                               </div>
+                   </div>
+                   <div class="tbbox">
+                              <div class="tbcon">
+                                      <h2>NO.1</h2>  
+                                      <span>
+                                         <h3><a href="#">漠蓉尚品就是肉苁蓉</a></h3>
+                                         <a href="#"><img src="../../../img/img_zns_note/pic3.jpg" /></a>
+                                      </span>         
+                                      <p>历代补肾补益方剂中，肉苁蓉的使用频率最高，现代医学研究表明，肉苁蓉提取物能够明显延长阳虚动物的耐冻时间！<br />
+                                               <em><a href="#">[详细]</a></em>
+                                      </p>
+          
+                               </div>
+                   </div>
+                   
+                 <div class="tbbox">
+                
+                    <div class="tbcon">
+                      <h2>NO.1</h2>  
+                      <span>
+                         <h3><a href="#">漠蓉尚品就是肉苁蓉</a></h3>
+                         <a href="#"><img src="../../../img/img_zns_note/pic3.jpg" /></a>
+                      </span>         
+                      <p>历代补肾补益方剂中，肉苁蓉的使用频率最高，现代医学研究表明，肉苁蓉提取物能够明显延长阳虚动物的耐冻时间！<br /><em><a href="#">[详细]</a></em>
+                      </p>
+          
+                    </div>
+                 </div>
+                 <div class="tbbox">
+                              <div class="tbcon">
+                                      <h2>NO.1</h2>  
+                                      <span>
+                                         <h3><a href="#">漠蓉尚品就是肉苁蓉</a></h3>
+                                         <a href="#"><img src="../../../img/img_zns_note/pic3.jpg" /></a>
+                                      </span>         
+                                      <p>历代补肾补益方剂中，肉苁蓉的使用频率最高，现代医学研究表明，肉苁蓉提取物能够明显延长阳虚动物的耐冻时间！<br />
+                                               <em><a href="#">[详细]</a></em>
+                                      </p>
+          
+                               </div>
+                   </div>
+            </div>
+<!------taobao end---------------------------------------------------------------------------------------------------------------------------------->
+            <div id="chanpin">
+                     <div class="cppic">
+                              <span class="img"></span>
+                              <p>食疗养生产品国内目前最主要的漠蓉尚品、村品鹿茸、藏喜堂、杞里香几个国内养生食品品牌引导着注重养生健康人群.这几个品牌那些产品才是最适合自己的呢？
+                              </p>
+                     </div>
+<!-------------cppic end---------------------------------------------------------------------------------------------------------------------------------->
+                     <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                       <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                       <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                      <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                      <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                      <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                       <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+                       <div class="cp_box">
+                                <img src="../../../img/img_zns_note/pic4.jpg" />
+                                <span class="title cplink"><a href="#">滋阴补肾茶 漠蓉保健养生茶</a></span>
+                                <span>限时包邮 畅销单品专卖价七折！</span>
+                                <span class="price money">淘宝价 <strong>&yen;137</strong></span>
+                                <span class="price cpnum">累计已售出 <strong>19860</strong> 件</span>
+                                <em class="check"><a href="#"><a href="#">查看详细</a></em>
+                       </div>
+<!-------------cp_box end---------------------------------------------------------------------------------------------------------------------------------->
+             <div style="clear:both"></div>
+            </div>
+<!-------chanpin end---------------------------------------------------------------------------------------------------------------------------------->
+            
+            <div id="copyright">
+                <p> <a href="#">关于本站</a> |
+                        <a href="#">版权信息</a> |<a href="#"> 合作伙伴</a> |
+                        <a href="#">联系我们</a> |<a href="#">网站地图</a>
+                        <em>为了您的健康安全肾虚补肾的食疗方法请咨询权威医师</em>
+                </p>
+             </div>
+<!-------copyright end---------------------------------------------------------------------------------------------------------------------------------->
+     </body>
+</html>
+

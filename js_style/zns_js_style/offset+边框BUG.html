@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{ width:200px;height:200px; background:red; border:1px solid black;}
+</style>
+<script>
+/*setInterval(function()
+{
+	oDiv1=document.getElementById('div1')
+	oDiv1.style.width=oDiv1.offsetWidth-1+'px'//BUG,虽然是-1，但是加上边框后就有变大的效果，offsetWidth是包括边框宽度的，这里是202
+	},30)
+*/
+/*解决方法1)用style方法，但是样式要设置在行间
+setInterval(function()
+{
+	oDiv1=document.getElementById('div1')
+	oDiv1.style.width=parseInt(oDiv1.style.width)-1+'px'
+	},30)
+*/
+/*解决方法2)currentStyle和getComputedStyle连用，非行间样式
+function getStyle(obj,name)
+{
+	if(obj.currentStyle)
+	{
+		return obj.currentStyle[name]
+		}
+	else
+	{
+		return getComputedStyle(obj,false)[name]
+		}
+	}
+setInterval(function()
+{
+	var oDiv1=document.getElementById('div1');
+	oDiv1.style.width=parseInt(getStyle(oDiv1,'width'))-1+'px'//getStyle里的单引号不要忘
+	},30)*/
+</script>
+</head>
+
+<body>
+<div id="div1">
+</div>
+</body>
+</html>

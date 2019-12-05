@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<style>
+#container{
+	height:110px;
+	margin:0 auto;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	overflow:hidden;
+	position:relative
+}
+#container img{
+	position:absolute;
+	display:block;
+	left:0;
+	border-left:1px solid #ccc;}
+</style>
+<script>
+window.onload=function(){
+	 var box=document.getElementById('container')
+	 var imgs=box.getElementsByTagName('img')
+     //掩体宽度
+	 var imgWidth=imgs[0].offsetWidth;
+	 var  exposeWidth=30;
+	 var boxWidth=imgWidth+(imgs.length-1)*exposeWidth;
+	 box.style.width=boxWidth+'px';	
+	 var tanslate=imgWidth-exposeWidth;
+    
+	 function setImgsPos(){
+		   for(var i=1; i<imgs.length; i++){
+			imgs[i].style.left=imgWidth+exposeWidth*(i-1)+'px';	 
+		   }
+      }//setImgsPos=end
+     setImgsPos();
+     
+	 for(var i=0; i<imgs.length; i++){
+           (function(i){
+				 imgs[i].onmouseover=function(){
+				  setImgsPos();//
+                   for(var j=1; j<=i; j++) {
+				  imgs[j].style.left=imgs[j].offsetLeft-tanslate+'px';
+		          }  
+			     }
+			 })(i);
+           
+	  }//for-end
+};
+</script>
+</head>
+
+<body>
+<div id="container">
+<img src="../../demo/tecent首页/20170115222515/1.jpg" alt="大闹天宫" title="大闹天宫">
+<img src="../../demo/tecent首页/20170115222515/2.jpg" alt="哪吒闹海" title="哪吒闹海">
+<img src="../../demo/tecent首页/20170115222515/3.jpg" alt="五指山下" title="五指山下">
+<img src="../../demo/tecent首页/20170115222515/4.jpg" alt="仙女下凡" title="仙女下凡">
+</div>
+</body>
+</html>

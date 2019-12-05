@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格排序及DOM映射</title>
+	<style type="text/css">
+#ul1 li{ list-style: none; border-bottom: 1px dashed }
+	</style>
+<script type="text/javascript" src="../../js/utils.js"></script>
+
+
+</head>
+<body>
+
+	<ul id="ul1">
+		<li>68</li>
+		<li>80</li>
+		<li>71</li>
+		<li>54</li>
+		<li>12</li>
+	</ul>
+
+</body>
+</html>
+<script type="text/javascript">
+var oUl = document.getElementById("ul1") ;
+var oLi = document.getElementsByTagName("li") ;
+
+var ary = utils.listToArray(oLi);
+console.log(ary)
+	
+	ary.sort(function(a,b){
+		return parseFloat(a.innerHTML)-parseFloat(b.innerHTML);
+	});
+var frg = document.createDocumentFragment();
+for(var i = 0; i<ary.length; i++){
+	frg.appendChild(ary[i]);
+}
+oUl.appendChild(frg)
+frg = null
+
+// DOM映射机制，当添加或删除元素时，不需要重新获取DOM元素集合，js中的集合
+// 也会相应改变，因为DOM的元素集合与JS中获取到对应的元素集合绑定在一起，形成一种映射关系
+</script>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+'use strict';
+
+/*箭头函数,用于简写匿名函数*/
+/*let func = (a) => { 
+  return a+1;
+}
+let func = (a) => a+1; 更简便的写法，省略了return，如果只有一个参数，a外面不用加括号
+console.log(func(1))*/
+
+/*普通方法this会变，是定义时的上下文*/
+/*function func () {
+  setTimeout ( function () {
+    console.log(this.id)
+  })
+}
+let obj = {
+  id: 123
+};
+func.call(obj);
+function func () {
+  setTimeout ( function () {
+    console.log(this.id)
+  })
+}
+let obj = {
+  id: 123
+};
+func.call(obj);//undefined
+*/
+
+/*箭头函数方法this不变,始终是运行时的上下文*/
+/*function func () {
+  setTimeout (() => {
+    console.log(this.id)
+  })
+}
+let obj = {
+  id: 123
+};
+func.call(obj);//123*/
+
+/*ajax默认参数设置*/
+/*function ajax ({method = 'get', url = 'default_url'} = {}){
+  console.log(method, url);
+}*/
+</script>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>this</title><link rel="stylesheet" type="text/css" href="../../reset/qq.css">
+	<style type="text/css">
+a,h2,div {
+      -moz-user-select:none;
+      -webkit-user-select:none;
+      user-select:none;    
+}
+a{background:#CFCFCF;}
+a:hover{text-decoration:none; color: black;}
+a:active{text-decoration:none; background:yellow/* 指正在点的链接*/ 
+}
+
+.warp{ margin-top: 20px; }
+.line{ border-bottom: 1px dashed #CFCFCF; width: 250px;  }
+.warp h2{ margin: 10px 0; }
+#content{display:block; width: 250px; height: 30px;  line-height: 30px; margin-top: 10px; }
+#number{ color:red; }
+</style>
+</head>
+<body>
+<center class="warp">
+<h2>问题：认为小阳很帅的请狂点</h2>
+<div class="line"></div>
+<a id="content">我非常非常赞同以上的观点<b id="number"></b></a>
+</center>
+
+</body>
+<script type="text/javascript">
+window.onload=function () {
+	let oDiv = document.getElementById ('content')
+	let oNum = document.getElementById ('number')
+	   /*不用全局变量而且函数不销毁
+	   方法1*/
+	  /*~function(){ 
+	  	let count = 0;
+      	oDiv.onclick=function () {
+		
+		count++;
+		oNum.innerHTML= count;
+	     
+	   	};
+	  } ()*/
+	  	// 方法2，内存泄漏问题
+	 	/*oDiv.onclick= (function () { 
+	  	let count = 0;	
+	  	return function () {	
+		count++;
+		oNum.innerHTML= count;  }
+	 }())*/
+	 //方法3，虽然内存会及时销毁，但是每一次点击，都会重新渲染样式。
+/*	 oDiv.onclick= function () { 
+	  
+		oNum.innerHTML++;//++号将本来的字符串类型innerHTML值隐式转换为数字
+	};*/
+
+		//推荐方法
+		//利用自定义属性存储，不污染window
+		oDiv.count = 0;
+		 oDiv.onclick= function () { 
+	  
+		oNum.innerHTML= ++ oDiv.count;//++号将本来的字符串类型innerHTML值隐式转换为数字
+	};
+	
+	
+}
+</script>
+</html>

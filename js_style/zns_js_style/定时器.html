@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+#div1{ width:200px; height:200px; background:red; position:absolute; left:600px;top:100px;}
+</style>
+<script>
+var timer=''//必须放在函数外面，否则点击多下时，定时器还会累加
+function startMove()
+{
+	var oDiv=document.getElementById('div1');
+	
+	clearInterval(timer) //点击关掉之前的定时器，防止多次点击累加
+	timer=setInterval(function()
+	{   
+	    var speed=0;
+		if(oDiv.offsetLeft<0)
+		{
+			speed=7
+			}
+		else
+		{
+			speed=-7
+			}
+		document.title=oDiv.offsetLeft
+	    if(oDiv.offsetLeft<=0)  //把开始和停止分开
+		{ clearInterval(timer)}
+		else
+		{
+			oDiv.style.left=oDiv.offsetLeft+speed+'px';
+		}
+		}
+	,30);
+	}
+</script>
+</head>
+
+<body>
+<input type="button" value="开始" onClick="startMove()" />
+<div id="div1"></div>
+</body>
+</html>

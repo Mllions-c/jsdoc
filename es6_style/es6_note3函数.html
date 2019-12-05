@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>珠峰会员es6视频</title>
+
+</head>
+
+<body>
+
+
+</body>
+
+<script type="text/javascript" src="a.js"></script>
+<script type="text/javascript">
+'use strict';
+/*设置默认参数方法, 保证用户用错时，程序不会报错*/
+/*function add (x, y){
+ if (typeof y=== 'undefined') {
+  y= 0;
+ }
+ return x + y;
+}
+console.log(add(1))*/
+/*原始默认值
+function ajax (params){
+	params.type = params.type || 'get';
+	params.url = params.url || 'default_url'
+} */
+
+function ajax ({method = get, url = default_url} = {}){//当一个参数都不传是，让他默认为空，这样不会报错
+	console.log(method, url);
+} 
+
+/*更好的方法，使用语法糖*/
+/*function add (x=0, y=0){
+
+ return x + y;
+}
+console.log(add(1))*/
+
+/*拓展运算符...用法，*/
+/*function add (a, ...arg) {
+  debugger;
+console.log(a);
+  let res = 0;
+  res+= a;
+  for (let i = arg.length-1; i>= 0; i-- ){//优化for循环，性能优先，换内存，和零比较最快
+  	//for(let i =0; len<arg.length; i<len; i++)//次之写法
+    res +=arg[i];
+  }
+  return res;
+}
+console.log(add(1,2,3,4,5));*/
+
+/*求最大值*/
+/*let arr = [3, 2, 5, 6, 7, 3, 345, 46];
+let m = Math.max.apply(null, arr);也可
+let m = Math.max(...arr);
+console.log(m);*/
+</script>
+</html>
